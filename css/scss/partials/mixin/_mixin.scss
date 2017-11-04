@@ -22,7 +22,6 @@
 
 //Mixin for background image opacity, no hover
 @mixin background-image-opacity($imgUrl:false, $backgroundColor:false) {
-    height: 100vh;
     background-image: url($imgUrl);
     background-position: center center;
     background-size: cover;

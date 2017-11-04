@@ -12,19 +12,16 @@ General
 *{
     font-family: sans-serif;
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 html{
-    /*@include md{*/
-        font-size: 62.5%;
-    /*}
-    @include xs-md{
-        font-size: 31.25%;
-    }*/
+    font-size: 62.5%;
 }
 
 body{
-    background-color: #17232d;
+   // background-color: #17232d;
     margin:0;
 }
 
@@ -60,6 +57,18 @@ a:hover {
 
 .bg-black {
     background-color: $secondaire-noir!important;
+}
+
+.btn-psm {
+    @include setup-font($sourceSansPro, white!important, 300);
+    @include responsive-font(2.1rem, 2.1rem,2.1rem,2.1rem,2.1rem);
+    min-width: 200px;
+    text-transform: capitalize;
+    border-radius: 0!important;
+    padding: 5px 0 5px 0;
+    background-color: $secondaire-bleu;
+    &:hover{background-color: $primaire-vert}
+    &:active{background-color: $primaire-vert}
 }
 
 /* ==========================================================================
@@ -112,7 +121,6 @@ header {
 
     }
 
-
     .navbar-toggler {
         border-color: $tertiaire-gris-blanc;
         padding: 10px;
@@ -153,14 +161,15 @@ header {
 
 
 /* ==========================================================================
-WELCOME PAGE
+WELCOME PAGE - SECTION WELCOME
 ========================================================================== */
-// Section Welcome
+
 #welcome-section {
-    height: 100vh;
     @include background-image-opacity("../img/dept-mm.jpg", rgba(32, 49, 60, 0.8));
 
     .row{
+        position: relative;
+        z-index: 1;
         flex-direction: row;
         @include xs-md{
             flex-direction: column-reverse;
@@ -168,10 +177,13 @@ WELCOME PAGE
     }
 
     #welcome-left-collumn {
-        z-index: 1;
+        height: 100vh;
 
         @include xs-md{
-            max-height: 50vh;
+            /* Portrait */
+            @media screen and (orientation:portrait) {
+                height:50vh;
+            }
         }
 
         #logo-welcome{
@@ -223,15 +235,17 @@ WELCOME PAGE
     }
 
     #welcome-right-collumn {
-        height: 100%;
-        z-index: 1;
+        height: 100vh;
         background-color: rgba(52, 73, 94, 0.5);
-        transition-duration: 0.5s;
+        //transition-duration: 0.5s;
         overflow: hidden;
 
         @include xs-md{
-            padding-top: 50px;
-            max-height: 50vh;
+            /* Portrait */
+            @media screen and (orientation:portrait) {
+                padding-top: 50px;
+                height: 50vh;
+            }
         }
 
         #animations_home{
@@ -240,6 +254,211 @@ WELCOME PAGE
             .svg-container svg{
                 width:100%;
                 max-height: 100%;
+                @media screen and (orientation:landscape) {
+                    height: 60%;
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+WELCOME PAGE - SECTION PRESENTATION
+========================================================================== */
+
+#presentation-section {
+    overflow: hidden;
+    .row {
+        position: relative;
+        z-index: 1;
+    }
+    @include xs-md {
+        min-height: 100vh;
+    }
+    @include md{
+        height:100vh;
+    }
+    width: 100%;
+    background-color: $secondaire-bleu;
+
+    #presentation-content{
+        height: 100%;
+        position: relative;
+        z-index: 1;
+
+        @include xs-md {
+            padding: 30px 0 30px 0;
+            min-height: 100vh;
+        }
+        @include md(){
+            height: 50vh;
+            flex-direction: row;
+        }
+
+        background-color: $tertiaire-gris-blanc;
+        #presentation-picture{
+            img,svg {
+                width: 100%;
+                @include md(){
+                    position: absolute;
+                    margin: auto;
+                    left:-75%;
+                    top:0;
+                    bottom: 0;
+                }
+
+                @include md() {
+                    width: 150%;
+                }
+            }
+        }
+
+        #presentation-text {
+
+            @include xs-md(){
+                justify-content: center !important;
+                align-items: center !important;
+            }
+            h2{
+                padding-top: 30px;
+                @include setup-font($lovelo, $primaire-vert, 300);
+                @include responsive-font(2.4rem,2.4rem,2.4rem,2.4rem,2.4rem)
+            }
+
+            p{
+                @include setup-font($sourceSansPro, black, 300);
+                @include responsive-font(1.6rem,1.6rem,1.6rem,1.6rem,1.6rem,1)
+            }
+        }
+    }
+
+    .losange{
+        &:nth-of-type(1) {
+            z-index: -1;
+            margin:auto;
+            top:0;
+            left:0;
+            bottom: 0;
+            right:0;
+            height: 200px;
+            width: 200px;
+            background-color: $primaire-vert;
+        }
+
+        &:nth-of-type(2) {
+            z-index: -3;
+            top:80%;
+            left: 5%;
+            height: 300px;
+            width: 300px;
+            background-color: $secondaire-noir;
+        }
+        &:nth-of-type(3) {
+            z-index: -2;
+            top:20%;
+            left: 20%;
+            height: 150px;
+            width: 150px;
+            background-color: $primaire-vert;
+        }
+
+        &:nth-of-type(4) {
+            z-index: -4;
+            top:-10%;
+            right: 2%;
+            height: 150px;
+            width: 150px;
+            background-color: $secondaire-noir;
+        }
+
+        position: absolute;
+        transform: rotate(-45deg);
+    }
+}
+
+/* ==========================================================================
+WELCOME PAGE - SECTION FORMATIONS
+========================================================================== */
+
+#formations-section{
+    height: 100vh;
+    .formations {
+        align-items: stretch;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-flow: row nowrap;
+        flex-flow: row nowrap;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+
+        @include xs{
+            flex-direction: column;
+        }
+
+        @include md{
+            flex-direction: row;
+        }
+
+        .formation {
+
+            display: flex;
+            -webkit-box-flex: 1;
+            -ms-flex: 1;
+            flex: 1;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+            background-color: #ccc;
+            min-width: 10%;
+            -webkit-transition: 0.5s;
+            transition: 0.5s;
+
+            &:nth-child(1) {
+                @include background-image-opacity("../img/1.jpg", rgba(52, 73, 94, 0.8));
+            }
+
+            &:nth-child(2) {
+                @include background-image-opacity("../img/2.jpg", rgba(32, 49, 60, 0.8));
+            }
+
+            &:nth-child(3) {
+                @include background-image-opacity("../img/3.jpg", rgba(141, 188, 31, 0.8));
+            }
+
+            @include md{
+                &:hover {
+                    -webkit-box-flex: 2;
+                    -ms-flex-positive: 2;
+                    flex-grow: 3;
+
+                    .filter::after{
+                        background-color:transparent;
+                    }
+                }
+
+            }
+
+            .filter.activeScroll{
+                &:after{
+                    background-color:transparent;
+                }
+            }
+
+            .filter:after{
+                @include transition(all 1s ease);
+            }
+
+            h2, h2 > span.writing-letter>span{
+                position: relative;
+                z-index: 1;
+                @include setup-font($lovelo, white, normal);
+                @include responsive-font(5rem,5rem,5rem,5rem,5rem);
+
+                span.writing-letter>span{
+                    display:inline-block;
+                }
             }
         }
     }

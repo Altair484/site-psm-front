@@ -13,18 +13,14 @@ General
 ========================================================================== */
 * {
   font-family: sans-serif;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
 
 html {
-  /*@include md{*/
-  font-size: 62.5%;
-  /*}
-  @include xs-md{
-      font-size: 31.25%;
-  }*/ }
+  font-size: 62.5%; }
 
 body {
-  background-color: #17232d;
   margin: 0; }
 
 .row {
@@ -53,6 +49,40 @@ a:hover {
 
 .bg-black {
   background-color: #17232d !important; }
+
+.btn-psm {
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  color: white !important;
+  font-weight: 300;
+  min-width: 200px;
+  text-transform: capitalize;
+  border-radius: 0 !important;
+  padding: 5px 0 5px 0;
+  background-color: #34495e; }
+  @media (min-width: 1px) {
+    .btn-psm {
+      font-size: 2.1rem;
+      line-height: 2.1rem; } }
+  @media (min-width: 576px) {
+    .btn-psm {
+      font-size: 2.1rem;
+      line-height: 2.1rem; } }
+  @media (min-width: 768px) {
+    .btn-psm {
+      font-size: 2.1rem;
+      line-height: 2.1rem; } }
+  @media (min-width: 992px) {
+    .btn-psm {
+      font-size: 2.1rem;
+      line-height: 2.1rem; } }
+  @media (min-width: 1200px) {
+    .btn-psm {
+      font-size: 2.1rem;
+      line-height: 2.1rem; } }
+  .btn-psm:hover {
+    background-color: #8dbc1f; }
+  .btn-psm:active {
+    background-color: #8dbc1f; }
 
 /* ==========================================================================
 NAVIGATION
@@ -154,11 +184,9 @@ header {
       left: -50%; }
 
 /* ==========================================================================
-WELCOME PAGE
+WELCOME PAGE - SECTION WELCOME
 ========================================================================== */
 #welcome-section {
-  height: 100vh;
-  height: 100vh;
   background-image: url("../img/dept-mm.jpg");
   background-position: center center;
   background-size: cover;
@@ -176,15 +204,21 @@ WELCOME PAGE
     width: 100%;
     z-index: 1; }
   #welcome-section .row {
+    position: relative;
+    z-index: 1;
     flex-direction: row; }
     @media (min-width: 1px) and (max-width: 768px) {
       #welcome-section .row {
         flex-direction: column-reverse; } }
   #welcome-section #welcome-left-collumn {
-    z-index: 1; }
+    height: 100vh; }
     @media (min-width: 1px) and (max-width: 768px) {
       #welcome-section #welcome-left-collumn {
-        max-height: 50vh; } }
+        /* Portrait */ } }
+  @media screen and (min-width: 1px) and (max-width: 768px) and (orientation: portrait) {
+    #welcome-section #welcome-left-collumn {
+      height: 50vh; } }
+
     #welcome-section #welcome-left-collumn #logo-welcome {
       display: none; }
       @media (min-width: 992px) {
@@ -266,21 +300,281 @@ WELCOME PAGE
           cursor: pointer;
           color: white; }
   #welcome-section #welcome-right-collumn {
-    height: 100%;
-    z-index: 1;
+    height: 100vh;
     background-color: rgba(52, 73, 94, 0.5);
-    transition-duration: 0.5s;
     overflow: hidden; }
     @media (min-width: 1px) and (max-width: 768px) {
       #welcome-section #welcome-right-collumn {
-        padding-top: 50px;
-        max-height: 50vh; } }
+        /* Portrait */ } }
+  @media screen and (min-width: 1px) and (max-width: 768px) and (orientation: portrait) {
+    #welcome-section #welcome-right-collumn {
+      padding-top: 50px;
+      height: 50vh; } }
+
     #welcome-section #welcome-right-collumn #animations_home {
       display: flex;
       height: 100%; }
       #welcome-section #welcome-right-collumn #animations_home .svg-container svg {
         width: 100%;
         max-height: 100%; }
+        @media screen and (orientation: landscape) {
+          #welcome-section #welcome-right-collumn #animations_home .svg-container svg {
+            height: 60%; } }
+
+/* ==========================================================================
+WELCOME PAGE - SECTION PRESENTATION
+========================================================================== */
+#presentation-section {
+  overflow: hidden;
+  width: 100%;
+  background-color: #34495e; }
+  #presentation-section .row {
+    position: relative;
+    z-index: 1; }
+  @media (min-width: 1px) and (max-width: 768px) {
+    #presentation-section {
+      min-height: 100vh; } }
+  @media (min-width: 768px) {
+    #presentation-section {
+      height: 100vh; } }
+  #presentation-section #presentation-content {
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    background-color: #e8e8e8; }
+    @media (min-width: 1px) and (max-width: 768px) {
+      #presentation-section #presentation-content {
+        padding: 30px 0 30px 0;
+        min-height: 100vh; } }
+    @media (min-width: 768px) {
+      #presentation-section #presentation-content {
+        height: 50vh;
+        flex-direction: row; } }
+    #presentation-section #presentation-content #presentation-picture img, #presentation-section #presentation-content #presentation-picture svg {
+      width: 100%; }
+      @media (min-width: 768px) {
+        #presentation-section #presentation-content #presentation-picture img, #presentation-section #presentation-content #presentation-picture svg {
+          position: absolute;
+          margin: auto;
+          left: -75%;
+          top: 0;
+          bottom: 0; } }
+      @media (min-width: 768px) {
+        #presentation-section #presentation-content #presentation-picture img, #presentation-section #presentation-content #presentation-picture svg {
+          width: 150%; } }
+    @media (min-width: 1px) and (max-width: 768px) {
+      #presentation-section #presentation-content #presentation-text {
+        justify-content: center !important;
+        align-items: center !important; } }
+    #presentation-section #presentation-content #presentation-text h2 {
+      padding-top: 30px;
+      font-family: "Lovelo", Helvetica, Arial, sans-serif;
+      color: #8dbc1f;
+      font-weight: 300; }
+      @media (min-width: 1px) {
+        #presentation-section #presentation-content #presentation-text h2 {
+          font-size: 2.4rem;
+          line-height: 2.4rem; } }
+      @media (min-width: 576px) {
+        #presentation-section #presentation-content #presentation-text h2 {
+          font-size: 2.4rem;
+          line-height: 2.4rem; } }
+      @media (min-width: 768px) {
+        #presentation-section #presentation-content #presentation-text h2 {
+          font-size: 2.4rem;
+          line-height: 2.4rem; } }
+      @media (min-width: 992px) {
+        #presentation-section #presentation-content #presentation-text h2 {
+          font-size: 2.4rem;
+          line-height: 2.4rem; } }
+      @media (min-width: 1200px) {
+        #presentation-section #presentation-content #presentation-text h2 {
+          font-size: 2.4rem;
+          line-height: 2.4rem; } }
+    #presentation-section #presentation-content #presentation-text p {
+      font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+      color: black;
+      font-weight: 300; }
+      @media (min-width: 1px) {
+        #presentation-section #presentation-content #presentation-text p {
+          font-size: 1.6rem;
+          line-height: 2.6rem; } }
+      @media (min-width: 576px) {
+        #presentation-section #presentation-content #presentation-text p {
+          font-size: 1.6rem;
+          line-height: 2.6rem; } }
+      @media (min-width: 768px) {
+        #presentation-section #presentation-content #presentation-text p {
+          font-size: 1.6rem;
+          line-height: 2.6rem; } }
+      @media (min-width: 992px) {
+        #presentation-section #presentation-content #presentation-text p {
+          font-size: 1.6rem;
+          line-height: 2.6rem; } }
+      @media (min-width: 1200px) {
+        #presentation-section #presentation-content #presentation-text p {
+          font-size: 1.6rem;
+          line-height: 2.6rem; } }
+  #presentation-section .losange {
+    position: absolute;
+    transform: rotate(-45deg); }
+    #presentation-section .losange:nth-of-type(1) {
+      z-index: -1;
+      margin: auto;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      height: 200px;
+      width: 200px;
+      background-color: #8dbc1f; }
+    #presentation-section .losange:nth-of-type(2) {
+      z-index: -3;
+      top: 80%;
+      left: 5%;
+      height: 300px;
+      width: 300px;
+      background-color: #17232d; }
+    #presentation-section .losange:nth-of-type(3) {
+      z-index: -2;
+      top: 20%;
+      left: 20%;
+      height: 150px;
+      width: 150px;
+      background-color: #8dbc1f; }
+    #presentation-section .losange:nth-of-type(4) {
+      z-index: -4;
+      top: -10%;
+      right: 2%;
+      height: 150px;
+      width: 150px;
+      background-color: #17232d; }
+
+/* ==========================================================================
+WELCOME PAGE - SECTION FORMATIONS
+========================================================================== */
+#formations-section {
+  height: 100vh; }
+  #formations-section .formations {
+    align-items: stretch;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center; }
+    @media (min-width: 1px) {
+      #formations-section .formations {
+        flex-direction: column; } }
+    @media (min-width: 768px) {
+      #formations-section .formations {
+        flex-direction: row; } }
+    #formations-section .formations .formation {
+      display: flex;
+      -webkit-box-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background-color: #ccc;
+      min-width: 10%;
+      -webkit-transition: 0.5s;
+      transition: 0.5s; }
+      #formations-section .formations .formation:nth-child(1) {
+        background-image: url("../img/1.jpg");
+        background-position: center center;
+        background-size: cover;
+        overflow: hidden;
+        position: relative;
+        z-index: 1; }
+        #formations-section .formations .formation:nth-child(1) .filter::after {
+          background-color: rgba(52, 73, 94, 0.8);
+          content: "";
+          display: block;
+          height: 100%;
+          left: 0;
+          top: 0;
+          position: absolute;
+          width: 100%;
+          z-index: 1; }
+      #formations-section .formations .formation:nth-child(2) {
+        background-image: url("../img/2.jpg");
+        background-position: center center;
+        background-size: cover;
+        overflow: hidden;
+        position: relative;
+        z-index: 1; }
+        #formations-section .formations .formation:nth-child(2) .filter::after {
+          background-color: rgba(32, 49, 60, 0.8);
+          content: "";
+          display: block;
+          height: 100%;
+          left: 0;
+          top: 0;
+          position: absolute;
+          width: 100%;
+          z-index: 1; }
+      #formations-section .formations .formation:nth-child(3) {
+        background-image: url("../img/3.jpg");
+        background-position: center center;
+        background-size: cover;
+        overflow: hidden;
+        position: relative;
+        z-index: 1; }
+        #formations-section .formations .formation:nth-child(3) .filter::after {
+          background-color: rgba(141, 188, 31, 0.8);
+          content: "";
+          display: block;
+          height: 100%;
+          left: 0;
+          top: 0;
+          position: absolute;
+          width: 100%;
+          z-index: 1; }
+      @media (min-width: 768px) {
+        #formations-section .formations .formation:hover {
+          -webkit-box-flex: 2;
+          -ms-flex-positive: 2;
+          flex-grow: 3; }
+          #formations-section .formations .formation:hover .filter::after {
+            background-color: transparent; } }
+      #formations-section .formations .formation .filter.activeScroll:after {
+        background-color: transparent; }
+      #formations-section .formations .formation .filter:after {
+        -moz-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        -webkit-transition: all 1s ease;
+        transition: all 1s ease; }
+      #formations-section .formations .formation h2, #formations-section .formations .formation h2 > span.writing-letter > span {
+        position: relative;
+        z-index: 1;
+        font-family: "Lovelo", Helvetica, Arial, sans-serif;
+        color: white;
+        font-weight: normal; }
+        @media (min-width: 1px) {
+          #formations-section .formations .formation h2, #formations-section .formations .formation h2 > span.writing-letter > span {
+            font-size: 5rem;
+            line-height: 5rem; } }
+        @media (min-width: 576px) {
+          #formations-section .formations .formation h2, #formations-section .formations .formation h2 > span.writing-letter > span {
+            font-size: 5rem;
+            line-height: 5rem; } }
+        @media (min-width: 768px) {
+          #formations-section .formations .formation h2, #formations-section .formations .formation h2 > span.writing-letter > span {
+            font-size: 5rem;
+            line-height: 5rem; } }
+        @media (min-width: 992px) {
+          #formations-section .formations .formation h2, #formations-section .formations .formation h2 > span.writing-letter > span {
+            font-size: 5rem;
+            line-height: 5rem; } }
+        @media (min-width: 1200px) {
+          #formations-section .formations .formation h2, #formations-section .formations .formation h2 > span.writing-letter > span {
+            font-size: 5rem;
+            line-height: 5rem; } }
+        #formations-section .formations .formation h2 span.writing-letter > span, #formations-section .formations .formation h2 > span.writing-letter > span span.writing-letter > span {
+          display: inline-block; }
 
 /* ==========================================================================
 Page Formation

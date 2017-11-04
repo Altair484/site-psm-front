@@ -4,7 +4,7 @@
         <div class="filter"></div>
         <div class="row">
             <div id="welcome-left-collumn" class="col-12 col-md-7 d-flex align-content-center flex-wrap">
-                <div id="logo-welcome" class="col-7 offset-1 hidden-md-down">
+                <div id="logo-welcome" class="col-7 offset-1 no-padding hidden-md-down">
                     <?php include('img/svg/psm-logo.svg'); ?>
                 </div>
                 <div id="svg-slider-texte" class="col-12 col-sm-10 offset-sm-1 no-padding">
@@ -41,10 +41,9 @@
                             </p>
                         </div>
                     </div>
-
                 </div>
 
-                <ul id="svg-slider-nav" class="col-10 offset-1 d-flex justify-content-between align-items-center">
+                <ul id="svg-slider-nav" class="col-10 offset-1 d-flex no-padding justify-content-between align-items-center">
                     <li><i id="prev" class="inactive fa fa-backward"></i></li>
                     <li><i id="sel_idee" class="selected fa fa-circle"></i></li>
                     <li><i id="sel_reunion" class="fa fa-circle"></i></li>
@@ -71,12 +70,62 @@
             </div>
         </div>
     </section>
-    <section id="general-presentation" style="height: 100vh;width: 100%;background-color: gainsboro;">
 
+    <section id="presentation-section">
+        <div class="row justify-content-center align-items-center">
+            <div class="losange"></div>
+            <div class="losange"></div>
+            <div class="losange"></div>
+            <div class="losange"></div>
+            <div id="presentation-content" class="offset-0 offset-md-2 col-12 col-md-9">
+                <div class="row">
+                    <div id="presentation-picture" class="col-12 col-md-3">
+                        <img src="http://via.placeholder.com/960x540" alt="">
+                    </div>
+                    <div id="presentation-text" class="col-12 col-md-9 d-flex justify-content-center align-items-start flex-column">
+                        <h2>Passionnés et Super Motivés !</h2>
+                        <p>Chez PSM, votre passion sera la clé de votre réussite. Que vous ayez un profil de graphiste, communicant, développeur,
+                            informaticien, ou que vous soyez tout simplement motivé et passionné par l’innovation, le multimédia et les nouvelles
+                            technologies, nous allons vous transmettre les outils et les expériences nécessaires à faire de vous un professionnel
+                            qualifié dans votre domaine de prédilection.
+                            Vous visez l’excellence pour la poursuite de vos études en BAC+3 ou en master ? PSM pourrait être la réponse : venez
+                            découvrir nos formations et nos modalités d’admission.
+                        </p>
+                        <a class="btn btn-psm" href="#">ADMISSION</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
+    <section id="formations-section">
+        <div class="row formations">
+            <a href="index.php" class="formation">
+                <div class="filter"></div>
+                <h2>L<span class="writing-letter">ICENCE</span>3</h2>
+            </a>
+
+            <a href="index.php" class="formation">
+                    <div class="filter"></div>
+                    <h2 class="formation-title">M<span class="writing-letter">ASTER</span>1</h2>
+            </a>
+
+            <a href="index.php" class="formation">
+                <div class="filter"></div>
+                <h2 class="formation-title">M<span class="writing-letter">ASTER</span>2</h2>
+            </a>
+        </div>
+    </section>
+    <section id="qsd-section" style="height:800px">
+    </section>
+
 </div>
 
+
+
 <?php include_once ('includes/footer.php'); ?>
+
+
+
 
 
 
