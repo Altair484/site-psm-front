@@ -18,7 +18,19 @@
 // Large and more
 @mixin lg { @media (min-width: #{$screen-lg}) { @content; } }
 // TV large devices
-@mixin xl { @media (min-width: #{$screen-xl}) { @content;  } }
+@mixin xl { @media (min-width: #{$screen-xl}) { @content; } }
+
+@mixin landscapeTablettePhones(){
+    @media (min-width: #{1px}) and (max-width:#{$screen-xl}) and (orientation: #{landscape}){
+        @content;
+    }
+}
+
+@mixin landscapePhones(){
+    @media (min-width: #{1px}) and (max-width:#{$screen-md}) and (orientation: #{landscape}){
+        @content;
+    }
+}
 
 //Mixin for background image opacity, no hover
 @mixin background-image-opacity($imgUrl:false, $backgroundColor:false) {
@@ -49,21 +61,25 @@
     @if $weight { font-weight: $weight; }
 }
 
-@mixin responsive-font($sizeXl:false, $sizeLg:false, $sizeMd:false, $sizeSm:false, $sizeXs:xs, $offsetLineHeight:0){
-    @include xs{
-        @if $sizeXs { font-size: $sizeXs; line-height: $sizeXs+$offsetLineHeight}
-    }
-    @include sm{
-        @if $sizeSm { font-size: $sizeSm; line-height: $sizeSm+$offsetLineHeight}
-    }
-    @include md{
-        @if $sizeMd { font-size: $sizeMd; line-height: $sizeMd+$offsetLineHeight}
-    }
-    @include lg{
-        @if $sizeLg { font-size: $sizeLg; line-height: $sizeLg+$offsetLineHeight}
-    }
-    @include xl{
-        @if $sizeXl { font-size: $sizeXl; line-height: $sizeXl+$offsetLineHeight}
+@mixin responsive-font($offsetLineHeight:0,$sizeXl:null, $sizeLg:null, $sizeMd:null, $sizeSm:null, $sizeXs:null){
+    @if ($sizeXl != null and $sizeLg != null and $sizeMd != null and $sizeSm != null and $sizeXs != null){
+        @include xs{
+            @if $sizeXs { font-size: $sizeXs; line-height: $sizeXs+$offsetLineHeight}
+        }
+        @include sm{
+            @if $sizeSm { font-size: $sizeSm; line-height: $sizeSm+$offsetLineHeight}
+        }
+        @include md{
+            @if $sizeMd { font-size: $sizeMd; line-height: $sizeMd+$offsetLineHeight}
+        }
+        @include lg{
+            @if $sizeLg { font-size: $sizeLg; line-height: $sizeLg+$offsetLineHeight}
+        }
+        @include xl{
+            @if $sizeXl { font-size: $sizeXl; line-height: $sizeXl+$offsetLineHeight}
+        }
+    }@else{
+        font-size: $sizeXl; line-height: $sizeXl+$offsetLineHeight;
     }
 }
 

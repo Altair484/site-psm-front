@@ -70,7 +70,6 @@
             </div>
         </div>
     </section>
-
     <section id="presentation-section">
         <div class="row justify-content-center align-items-center">
             <div class="losange"></div>
@@ -84,12 +83,12 @@
                     </div>
                     <div id="presentation-text" class="col-12 col-md-9 d-flex justify-content-center align-items-start flex-column">
                         <h2>Passionnés et Super Motivés !</h2>
-                        <p>Chez PSM, votre passion sera la clé de votre réussite. Que vous ayez un profil de graphiste, communicant, développeur,
-                            informaticien, ou que vous soyez tout simplement motivé et passionné par l’innovation, le multimédia et les nouvelles
-                            technologies, nous allons vous transmettre les outils et les expériences nécessaires à faire de vous un professionnel
-                            qualifié dans votre domaine de prédilection.
-                            Vous visez l’excellence pour la poursuite de vos études en BAC+3 ou en master ? PSM pourrait être la réponse : venez
-                            découvrir nos formations et nos modalités d’admission.
+                        <p>Chez PSM, votre <b>passion</b> sera la clé de votre réussite. Que vous ayez un profil de graphiste, communicant,
+                            développeur, informaticien, ou que vous soyez tout simplement <b>motivé</b> et passionné par <b>l’innovation</b>, le
+                            multimédia et les nouvelles technologies, nous allons vous transmettre les <b>outils</b>et les <b>expériences</b>
+                            nécessaires à faire de vous un professionnel qualifié dans votre domaine de prédilection.
+                            Vous visez <b>l’excellence</b> pour la poursuite de vos études en <b>BAC+3</b> ou en <b>Master</b> ? PSM pourrait être la
+                            réponse : venez découvrir nos <a href="#">formations</a> et nos <a href="">modalités d’admission</a>.
                         </p>
                         <a class="btn btn-psm" href="#">ADMISSION</a>
                     </div>
@@ -115,9 +114,123 @@
             </a>
         </div>
     </section>
-    <section id="qsd-section" style="height:800px">
-    </section>
+    <section id="projects-section">
+        <div class="row justify-content-center align-items-center">
+            <div class="losange"></div>
+            <div class="losange"></div>
+            <div class="losange"></div>
+            <div class="losange"></div>
+            <div id="projects-content" class="col-12 col-md-9">
+                <div class="row">
+                    <div id="projects-text" class="col-12 col-md-9 d-flex justify-content-center align-items-start flex-column">
+                        <h2>Des formations orientées projet</h2>
+                        <p>Les <b>projets multimédia</b> sont le pain quotidien des étudiants de PSM. Chaque année, ils sont amenés à
+                            réaliser un vrai projet d’<b>équipe</b>, en totale autonomie et dans des <b>conditions réelles</b> (et cela, en
+                            plus des projets spécifiques aux unités d’enseignements).<br />
+                            Ces <b>expériences concrètes</b>, en plus d’être extrêmement formatrices et valorisantes, aboutissent souvent
+                            à des résultats remarquables.<br />
+                            Découvrez les projets réalisés au fil des années par nos étudiant dans la section dédiée de ce site !
 
+                        </p>
+                        <div class="btns-box">
+                            <a class="btn btn-psm" href="#">PROJETS RHIZOME</a>
+                            <a class="btn btn-psm" href="#">PROJETS FIN D'ÉTUDES</a>
+                        </div>
+                    </div>
+                    <div id="projects-picture" class="col-12 col-md-3">
+                        <img src="http://via.placeholder.com/960x540" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </section>
+    <section id="news-section">
+        <div class="row justify-content-around">
+            <div class="news col-12 col-sm-6 col-xl-4 no-padding">
+                <div class="thumbnail">
+                    <figure>
+                        <a href="">
+                            <img src="img/1.jpg" class="portrait" alt="">
+                        </a>
+                        <span class="line"></span>
+                    </figure>
+
+                </div>
+                <div class="text-news-container col-12">
+                    <h3>Actualité 1</h3>
+                    <p class="date">9 octobre 2017</p>
+                    <p class="excerpt">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
+                        nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad... </p>
+                </div>
+            </div>
+            <div class="news col-12 col-sm-6 col-xl-4 no-padding">
+                <div class="thumbnail">
+                    <figure>
+                        <a href="">
+                            <img src="img/2.jpg" class="portrait" alt="">
+                        </a>
+                        <span class="line"></span>
+                    </figure>
+
+                </div>
+                <div class="text-news-container col-12">
+                    <h3>Actualité 1</h3>
+                    <p class="date">9 octobre 2017</p>
+                    <p class="excerpt">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
+                        nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad... </p>
+                </div>
+            </div>
+            <div class="news col-12 col-sm-6 col-xl-4 no-padding">
+                <div class="thumbnail">
+                    <figure>
+                        <a href="">
+                            <img src="img/1.jpg" class="portrait" alt="">
+                        </a>
+                        <span class="line"></span>
+                    </figure>
+                </div>
+                <div class="text-news-container col-12">
+                    <h3>Actualité 1</h3>
+                    <p class="date">9 octobre 2017</p>
+                    <p class="excerpt">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
+                        nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad... </p>
+                </div>
+            </div>
+            <div class="row w-100">
+                <div class="see-all-news  d-flex justify-content-center align-items-center col-12">
+                    <a class="btn btn-psm">Voir toutes les actualités</a>
+                </div>
+            </div>
+        </div>
+    </section>
+   <section id="professional-section">
+        <div class="row justify-content-center align-items-center">
+            <div class="losange"></div>
+            <div class="losange"></div>
+            <div class="losange"></div>
+            <div class="losange"></div>
+            <div id="professional-content" class="offset-0 offset-md-2 col-12 col-md-9">
+                <div class="row">
+                    <div id="professional-picture" class="col-12 col-md-3">
+                        <img src="http://via.placeholder.com/960x540" alt="">
+                    </div>
+                    <div id="professional-text" class="col-12 col-md-9 d-flex justify-content-center align-items-start flex-column">
+                        <h2>Un tremplin vers le monde du travail</h2>
+                        <p>La force de PSM est la <b>réussite</b> de ses étudiants dans le monde du travail. Pour atteindre ce but,
+                            nous misons sur la <b>qualité</b> des enseignements, sur la <b>polyvalence</b> des compétences des étudiants et
+                            sur des <b>expériences professionnelles</b> réellement valorisantes pour leurs profils.<br />
+                            Les stages de Licence 3 et de Master 2 visent à favoriser l’insertion professionnelle et le <b>recrutement</b>
+                            immédiat de nos diplômés.<br />
+                            Vous êtes un professionnel et vous souhaitez soumettre une offre de stage / emploi à nos étudiants ?
+                            Un formulaire est disponible pour vous dans la section <a href="#">Espace Pro</a>.
+                        </p>
+                        <a class="btn btn-psm" href="#">Espace pro</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </div>
 
 

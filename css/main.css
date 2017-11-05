@@ -23,6 +23,9 @@ html {
 body {
   margin: 0; }
 
+h1, h2, h3, h4 {
+  text-transform: uppercase; }
+
 .row {
   margin-right: 0 !important;
   margin-left: 0 !important;
@@ -37,6 +40,10 @@ a {
 
 a:hover {
   text-decoration: none; }
+
+b {
+  font-family: "Source Sans Pro";
+  font-weight: 600; }
 
 .show {
   display: block !important; }
@@ -54,33 +61,17 @@ a:hover {
   font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
   color: white !important;
   font-weight: 300;
+  font-size: 2.1rem;
+  line-height: 2.1rem;
   min-width: 200px;
-  text-transform: capitalize;
+  text-transform: uppercase;
   border-radius: 0 !important;
-  padding: 5px 0 5px 0;
+  padding: 10px 10px 10px 10px;
+  margin: 15px 0 15px 0;
   background-color: #34495e; }
-  @media (min-width: 1px) {
-    .btn-psm {
-      font-size: 2.1rem;
-      line-height: 2.1rem; } }
-  @media (min-width: 576px) {
-    .btn-psm {
-      font-size: 2.1rem;
-      line-height: 2.1rem; } }
-  @media (min-width: 768px) {
-    .btn-psm {
-      font-size: 2.1rem;
-      line-height: 2.1rem; } }
-  @media (min-width: 992px) {
-    .btn-psm {
-      font-size: 2.1rem;
-      line-height: 2.1rem; } }
-  @media (min-width: 1200px) {
-    .btn-psm {
-      font-size: 2.1rem;
-      line-height: 2.1rem; } }
   .btn-psm:hover {
-    background-color: #8dbc1f; }
+    background-color: #8dbc1f;
+    cursor: pointer; }
   .btn-psm:active {
     background-color: #8dbc1f; }
 
@@ -97,10 +88,10 @@ header {
 .navbar {
   height: 100%;
   background-color: transparent;
-  -moz-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  -webkit-transition: all 1s ease;
-  transition: all 1s ease; }
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease; }
   .navbar.full-black {
     background-color: #17232d; }
   @media (min-width: 1px) and (max-width: 992px) {
@@ -127,27 +118,9 @@ header {
     padding: 10px; }
     .navbar .navbar-toggler i {
       font-family: "FontAwesome", Helvetica, Arial, sans-serif;
-      color: #e8e8e8; }
-      @media (min-width: 1px) {
-        .navbar .navbar-toggler i {
-          font-size: xs;
-          line-height: xs0; } }
-      @media (min-width: 576px) {
-        .navbar .navbar-toggler i {
-          font-size: 2.8rem;
-          line-height: 2.8rem; } }
-      @media (min-width: 768px) {
-        .navbar .navbar-toggler i {
-          font-size: 2.8rem;
-          line-height: 2.8rem; } }
-      @media (min-width: 992px) {
-        .navbar .navbar-toggler i {
-          font-size: 2.8rem;
-          line-height: 2.8rem; } }
-      @media (min-width: 1200px) {
-        .navbar .navbar-toggler i {
-          font-size: 2.8rem;
-          line-height: 2.8rem; } }
+      color: #e8e8e8;
+      font-size: 2.8rem;
+      line-height: 2.8rem; }
   .navbar #navbarSupportedContent ul.navbar-nav li.nav-item {
     padding-right: 30px; }
     .navbar #navbarSupportedContent ul.navbar-nav li.nav-item.active a {
@@ -212,12 +185,9 @@ WELCOME PAGE - SECTION WELCOME
         flex-direction: column-reverse; } }
   #welcome-section #welcome-left-collumn {
     height: 100vh; }
-    @media (min-width: 1px) and (max-width: 768px) {
-      #welcome-section #welcome-left-collumn {
-        /* Portrait */ } }
-  @media screen and (min-width: 1px) and (max-width: 768px) and (orientation: portrait) {
-    #welcome-section #welcome-left-collumn {
-      height: 50vh; } }
+@media screen and (min-width: 1px) and (max-width: 768px) and (orientation: portrait) {
+  #welcome-section #welcome-left-collumn {
+    height: 60vh; } }
 
     #welcome-section #welcome-left-collumn #logo-welcome {
       display: none; }
@@ -263,23 +233,23 @@ WELCOME PAGE - SECTION WELCOME
           @media (min-width: 1px) {
             #welcome-section #welcome-left-collumn #svg-slider-texte #text-slider-container p {
               font-size: 1.6rem;
-              line-height: 1.6rem; } }
+              line-height: 2.6rem; } }
           @media (min-width: 576px) {
             #welcome-section #welcome-left-collumn #svg-slider-texte #text-slider-container p {
               font-size: 1.8rem;
-              line-height: 1.8rem; } }
+              line-height: 2.8rem; } }
           @media (min-width: 768px) {
             #welcome-section #welcome-left-collumn #svg-slider-texte #text-slider-container p {
               font-size: 2.4rem;
-              line-height: 2.4rem; } }
+              line-height: 3.4rem; } }
           @media (min-width: 992px) {
             #welcome-section #welcome-left-collumn #svg-slider-texte #text-slider-container p {
               font-size: 2.4rem;
-              line-height: 2.4rem; } }
+              line-height: 3.4rem; } }
           @media (min-width: 1200px) {
             #welcome-section #welcome-left-collumn #svg-slider-texte #text-slider-container p {
               font-size: 2.8rem;
-              line-height: 2.8rem; } }
+              line-height: 3.8rem; } }
     #welcome-section #welcome-left-collumn ul#svg-slider-nav li {
       list-style: none; }
       #welcome-section #welcome-left-collumn ul#svg-slider-nav li:first-of-type i, #welcome-section #welcome-left-collumn ul#svg-slider-nav li:last-of-type i {
@@ -308,8 +278,8 @@ WELCOME PAGE - SECTION WELCOME
         /* Portrait */ } }
   @media screen and (min-width: 1px) and (max-width: 768px) and (orientation: portrait) {
     #welcome-section #welcome-right-collumn {
-      padding-top: 50px;
-      height: 50vh; } }
+      padding-top: 100px;
+      height: 40vh; } }
 
     #welcome-section #welcome-right-collumn #animations_home {
       display: flex;
@@ -317,8 +287,9 @@ WELCOME PAGE - SECTION WELCOME
       #welcome-section #welcome-right-collumn #animations_home .svg-container svg {
         width: 100%;
         max-height: 100%; }
-        @media screen and (orientation: landscape) {
+        @media (min-width: 1px) and (max-width: 1200px) and (orientation: landscape) {
           #welcome-section #welcome-right-collumn #animations_home .svg-container svg {
+            margin-top: 100px;
             height: 60%; } }
 
 /* ==========================================================================
@@ -348,8 +319,11 @@ WELCOME PAGE - SECTION PRESENTATION
         min-height: 100vh; } }
     @media (min-width: 768px) {
       #presentation-section #presentation-content {
-        height: 50vh;
-        flex-direction: row; } }
+        flex-direction: row;
+        height: 75vh; } }
+    @media (min-width: 1200px) {
+      #presentation-section #presentation-content {
+        height: 50vh; } }
     #presentation-section #presentation-content #presentation-picture img, #presentation-section #presentation-content #presentation-picture svg {
       width: 100%; }
       @media (min-width: 768px) {
@@ -370,51 +344,15 @@ WELCOME PAGE - SECTION PRESENTATION
       padding-top: 30px;
       font-family: "Lovelo", Helvetica, Arial, sans-serif;
       color: #8dbc1f;
-      font-weight: 300; }
-      @media (min-width: 1px) {
-        #presentation-section #presentation-content #presentation-text h2 {
-          font-size: 2.4rem;
-          line-height: 2.4rem; } }
-      @media (min-width: 576px) {
-        #presentation-section #presentation-content #presentation-text h2 {
-          font-size: 2.4rem;
-          line-height: 2.4rem; } }
-      @media (min-width: 768px) {
-        #presentation-section #presentation-content #presentation-text h2 {
-          font-size: 2.4rem;
-          line-height: 2.4rem; } }
-      @media (min-width: 992px) {
-        #presentation-section #presentation-content #presentation-text h2 {
-          font-size: 2.4rem;
-          line-height: 2.4rem; } }
-      @media (min-width: 1200px) {
-        #presentation-section #presentation-content #presentation-text h2 {
-          font-size: 2.4rem;
-          line-height: 2.4rem; } }
+      font-weight: 300;
+      font-size: 2.4rem;
+      line-height: 2.4rem; }
     #presentation-section #presentation-content #presentation-text p {
       font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
       color: black;
-      font-weight: 300; }
-      @media (min-width: 1px) {
-        #presentation-section #presentation-content #presentation-text p {
-          font-size: 1.6rem;
-          line-height: 2.6rem; } }
-      @media (min-width: 576px) {
-        #presentation-section #presentation-content #presentation-text p {
-          font-size: 1.6rem;
-          line-height: 2.6rem; } }
-      @media (min-width: 768px) {
-        #presentation-section #presentation-content #presentation-text p {
-          font-size: 1.6rem;
-          line-height: 2.6rem; } }
-      @media (min-width: 992px) {
-        #presentation-section #presentation-content #presentation-text p {
-          font-size: 1.6rem;
-          line-height: 2.6rem; } }
-      @media (min-width: 1200px) {
-        #presentation-section #presentation-content #presentation-text p {
-          font-size: 1.6rem;
-          line-height: 2.6rem; } }
+      font-weight: 300;
+      font-size: 1.6rem;
+      line-height: 2.6rem; }
   #presentation-section .losange {
     position: absolute;
     transform: rotate(-45deg); }
@@ -455,6 +393,9 @@ WELCOME PAGE - SECTION FORMATIONS
 ========================================================================== */
 #formations-section {
   height: 100vh; }
+  @media (min-width: 1px) and (max-width: 1200px) and (orientation: landscape) {
+    #formations-section {
+      height: 300vh !important; } }
   #formations-section .formations {
     align-items: stretch;
     display: -webkit-box;
@@ -470,6 +411,9 @@ WELCOME PAGE - SECTION FORMATIONS
     @media (min-width: 768px) {
       #formations-section .formations {
         flex-direction: row; } }
+    @media (min-width: 1px) and (max-width: 1200px) and (orientation: landscape) {
+      #formations-section .formations {
+        flex-direction: column !important; } }
     #formations-section .formations .formation {
       display: flex;
       -webkit-box-flex: 1;
@@ -483,7 +427,7 @@ WELCOME PAGE - SECTION FORMATIONS
       -webkit-transition: 0.5s;
       transition: 0.5s; }
       #formations-section .formations .formation:nth-child(1) {
-        background-image: url("../img/1.jpg");
+        background-image: url("../img/6.jpg");
         background-position: center center;
         background-size: cover;
         overflow: hidden;
@@ -500,7 +444,7 @@ WELCOME PAGE - SECTION FORMATIONS
           width: 100%;
           z-index: 1; }
       #formations-section .formations .formation:nth-child(2) {
-        background-image: url("../img/2.jpg");
+        background-image: url("../img/7.jpg");
         background-position: center center;
         background-size: cover;
         overflow: hidden;
@@ -517,7 +461,7 @@ WELCOME PAGE - SECTION FORMATIONS
           width: 100%;
           z-index: 1; }
       #formations-section .formations .formation:nth-child(3) {
-        background-image: url("../img/3.jpg");
+        background-image: url("../img/6.jpg");
         background-position: center center;
         background-size: cover;
         overflow: hidden;
@@ -533,7 +477,7 @@ WELCOME PAGE - SECTION FORMATIONS
           position: absolute;
           width: 100%;
           z-index: 1; }
-      @media (min-width: 768px) {
+      @media (min-width: 992px) {
         #formations-section .formations .formation:hover {
           -webkit-box-flex: 2;
           -ms-flex-positive: 2;
@@ -543,38 +487,310 @@ WELCOME PAGE - SECTION FORMATIONS
       #formations-section .formations .formation .filter.activeScroll:after {
         background-color: transparent; }
       #formations-section .formations .formation .filter:after {
-        -moz-transition: all 1s ease;
-        -o-transition: all 1s ease;
-        -webkit-transition: all 1s ease;
-        transition: all 1s ease; }
+        -moz-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        -webkit-transition: all 0.5s ease;
+        transition: all 0.5s ease; }
       #formations-section .formations .formation h2, #formations-section .formations .formation h2 > span.writing-letter > span {
         position: relative;
         z-index: 1;
         font-family: "Lovelo", Helvetica, Arial, sans-serif;
         color: white;
-        font-weight: normal; }
-        @media (min-width: 1px) {
-          #formations-section .formations .formation h2, #formations-section .formations .formation h2 > span.writing-letter > span {
-            font-size: 5rem;
-            line-height: 5rem; } }
-        @media (min-width: 576px) {
-          #formations-section .formations .formation h2, #formations-section .formations .formation h2 > span.writing-letter > span {
-            font-size: 5rem;
-            line-height: 5rem; } }
-        @media (min-width: 768px) {
-          #formations-section .formations .formation h2, #formations-section .formations .formation h2 > span.writing-letter > span {
-            font-size: 5rem;
-            line-height: 5rem; } }
-        @media (min-width: 992px) {
-          #formations-section .formations .formation h2, #formations-section .formations .formation h2 > span.writing-letter > span {
-            font-size: 5rem;
-            line-height: 5rem; } }
-        @media (min-width: 1200px) {
-          #formations-section .formations .formation h2, #formations-section .formations .formation h2 > span.writing-letter > span {
-            font-size: 5rem;
-            line-height: 5rem; } }
+        font-weight: normal;
+        font-size: 5rem;
+        line-height: 5rem; }
         #formations-section .formations .formation h2 span.writing-letter > span, #formations-section .formations .formation h2 > span.writing-letter > span span.writing-letter > span {
           display: inline-block; }
+
+/* ==========================================================================
+WELCOME PAGE - SECTION PROJECTS
+========================================================================== */
+#projects-section {
+  width: 100%;
+  background-color: #17232d;
+  overflow: hidden; }
+  #projects-section .row {
+    position: relative;
+    z-index: 1; }
+    @media (min-width: 1px) and (max-width: 768px) {
+      #projects-section .row {
+        display: flex;
+        flex-direction: column-reverse; } }
+  @media (min-width: 1px) and (max-width: 768px) {
+    #projects-section {
+      min-height: 100vh; } }
+  @media (min-width: 768px) {
+    #projects-section {
+      height: 100vh; } }
+  #projects-section #projects-content {
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    background-color: #e8e8e8; }
+    @media (min-width: 1px) and (max-width: 768px) {
+      #projects-section #projects-content {
+        padding: 30px 0 30px 0;
+        min-height: 100vh; } }
+    @media (min-width: 768px) {
+      #projects-section #projects-content {
+        min-height: 75vh;
+        max-height: 90vh;
+        flex-direction: row; } }
+    @media (min-width: 1200px) {
+      #projects-section #projects-content {
+        height: 50vh; } }
+    #projects-section #projects-content #projects-picture img, #projects-section #projects-content #projects-picture svg {
+      width: 100%; }
+      @media (min-width: 768px) {
+        #projects-section #projects-content #projects-picture img, #projects-section #projects-content #projects-picture svg {
+          position: absolute;
+          margin: auto;
+          right: -75%;
+          top: 0;
+          bottom: 0; } }
+      @media (min-width: 768px) {
+        #projects-section #projects-content #projects-picture img, #projects-section #projects-content #projects-picture svg {
+          width: 150%; } }
+    @media (min-width: 1px) {
+      #projects-section #projects-content #projects-text {
+        justify-content: center !important;
+        align-items: center !important; } }
+    @media (min-width: 768px) {
+      #projects-section #projects-content #projects-text {
+        align-items: flex-start !important; } }
+    #projects-section #projects-content #projects-text h2 {
+      padding-top: 30px;
+      font-family: "Lovelo", Helvetica, Arial, sans-serif;
+      color: #8dbc1f;
+      font-weight: 300;
+      font-size: 2.4rem;
+      line-height: 2.4rem; }
+    #projects-section #projects-content #projects-text p {
+      font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+      color: black;
+      font-weight: 300;
+      font-size: 1.6rem;
+      line-height: 2.6rem; }
+      @media (min-width: 768px) {
+        #projects-section #projects-content #projects-text p {
+          text-align: left; } }
+    @media (max-width: 576px) {
+      #projects-section #projects-content #projects-text .btns-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column; } }
+    @media (min-width: 576px) {
+      #projects-section #projects-content #projects-text .btns-box a.btn:first-of-type {
+        margin-right: 30px !important; } }
+  @media (min-width: 1px) and (max-width: 768px) {
+    #projects-section div.col-md-2 {
+      display: none; } }
+  #projects-section .losange {
+    position: absolute;
+    transform: rotate(-45deg); }
+    #projects-section .losange:nth-of-type(1) {
+      z-index: -1;
+      top: 29%;
+      left: 43%;
+      height: 30vw;
+      width: 30vw;
+      background-color: #34495e; }
+    #projects-section .losange:nth-of-type(2) {
+      z-index: -3;
+      top: 15%;
+      right: 11%;
+      height: 20vw;
+      width: 20vw;
+      background-color: #34495e; }
+    #projects-section .losange:nth-of-type(3) {
+      z-index: -2;
+      top: 5%;
+      right: 29%;
+      height: 10vw;
+      width: 10vw;
+      background-color: #8dbc1f; }
+
+/* ==========================================================================
+WELCOME PAGE - SECTION NEWS
+========================================================================== */
+#news-section {
+  background-color: #e8e8e8; }
+  #news-section .thumbnail {
+    width: 100%;
+    height: 33vh;
+    overflow: hidden;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease; }
+    @media (min-width: 1px) and (max-width: 1200px) and (orientation: landscape) {
+      #news-section .thumbnail {
+        height: 60vh !important; } }
+    #news-section .thumbnail figure {
+      position: relative;
+      margin: 0 !important;
+      padding: 0 !important; }
+      #news-section .thumbnail figure::before {
+        position: absolute;
+        top: 0;
+        left: -75%;
+        z-index: 2;
+        display: block;
+        content: '';
+        width: 50%;
+        height: 100%;
+        background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%);
+        background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%);
+        -webkit-transform: skewX(-25deg);
+        transform: skewX(-25deg); }
+      #news-section .thumbnail figure.active::before {
+        -webkit-animation: shine .75s;
+        animation: shine .75s; }
+    #news-section .thumbnail img {
+      -moz-transition: all 0.5s ease;
+      -o-transition: all 0.5s ease;
+      -webkit-transition: all 0.5s ease;
+      transition: all 0.5s ease;
+      width: 100%;
+      height: auto;
+      min-height: 100%; }
+    #news-section .thumbnail .line {
+      position: absolute;
+      z-index: 2;
+      bottom: 0;
+      width: 30px;
+      height: 5px;
+      background-color: #8dbc1f;
+      -moz-transition: all 0.5s ease;
+      -o-transition: all 0.5s ease;
+      -webkit-transition: all 0.5s ease;
+      transition: all 0.5s ease; }
+    #news-section .thumbnail figure.active img {
+      width: 110%; }
+    #news-section .thumbnail figure.active .line {
+      width: 100%;
+      -moz-transition: all 0.5s ease;
+      -o-transition: all 0.5s ease;
+      -webkit-transition: all 0.5s ease;
+      transition: all 0.5s ease;
+      position: absolute; }
+  #news-section .text-news-container {
+    height: 33vh;
+    padding: 30px 15px 30px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+    @media (min-width: 1px) and (max-width: 1200px) and (orientation: landscape) {
+      #news-section .text-news-container {
+        height: 60vh !important; } }
+    #news-section .text-news-container h3 {
+      font-family: "Lovelo", Helvetica, Arial, sans-serif;
+      color: black;
+      font-weight: normal;
+      font-size: 2.4rem;
+      line-height: 2.4rem; }
+    #news-section .text-news-container p.date {
+      font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+      color: black;
+      font-weight: 300;
+      font-style: italic;
+      font-size: 1.6rem;
+      line-height: 1.6rem; }
+    #news-section .text-news-container p.excerpt {
+      font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+      color: black;
+      font-weight: 300;
+      font-size: 1.6rem;
+      line-height: 1.6rem; }
+  #news-section .see-all-news {
+    height: 33vh; }
+
+/* ==========================================================================
+WELCOME PAGE - SECTION PRESENTATION
+========================================================================== */
+#professional-section {
+  overflow: hidden;
+  width: 100%;
+  background-color: #34495e; }
+  #professional-section .row {
+    position: relative;
+    z-index: 1; }
+  @media (min-width: 1px) and (max-width: 768px) {
+    #professional-section {
+      min-height: 100vh; } }
+  @media (min-width: 768px) {
+    #professional-section {
+      height: 100vh; } }
+  #professional-section #professional-content {
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    background-color: #e8e8e8; }
+    @media (min-width: 1px) and (max-width: 768px) {
+      #professional-section #professional-content {
+        padding: 30px 0 30px 0;
+        min-height: 100vh; } }
+    @media (min-width: 768px) {
+      #professional-section #professional-content {
+        flex-direction: row;
+        height: 75vh; } }
+    @media (min-width: 1200px) {
+      #professional-section #professional-content {
+        height: 50vh; } }
+    #professional-section #professional-content #professional-picture img, #professional-section #professional-content #professional-picture svg {
+      width: 100%; }
+      @media (min-width: 768px) {
+        #professional-section #professional-content #professional-picture img, #professional-section #professional-content #professional-picture svg {
+          position: absolute;
+          margin: auto;
+          left: -75%;
+          top: 0;
+          bottom: 0; } }
+      @media (min-width: 768px) {
+        #professional-section #professional-content #professional-picture img, #professional-section #professional-content #professional-picture svg {
+          width: 150%; } }
+    @media (min-width: 1px) and (max-width: 768px) {
+      #professional-section #professional-content #professional-text {
+        justify-content: center !important;
+        align-items: center !important; } }
+    #professional-section #professional-content #professional-text h2 {
+      padding-top: 30px;
+      font-family: "Lovelo", Helvetica, Arial, sans-serif;
+      color: #8dbc1f;
+      font-weight: 300;
+      font-size: 2.4rem;
+      line-height: 2.4rem; }
+    #professional-section #professional-content #professional-text p {
+      font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+      color: black;
+      font-weight: 300;
+      font-size: 1.6rem;
+      line-height: 2.6rem; }
+  #professional-section .losange {
+    position: absolute;
+    transform: rotate(-45deg); }
+    #professional-section .losange:nth-of-type(1) {
+      z-index: -1;
+      top: 20%;
+      left: 18%;
+      height: 30vw;
+      width: 30vw;
+      background-color: #17232d; }
+    #professional-section .losange:nth-of-type(2) {
+      z-index: -3;
+      top: 40%;
+      right: 11%;
+      height: 20vw;
+      width: 20vw;
+      background-color: #17232d; }
+    #professional-section .losange:nth-of-type(3) {
+      z-index: -2;
+      top: 5%;
+      left: 15%;
+      height: 10vw;
+      width: 10vw;
+      background-color: #8dbc1f; }
 
 /* ==========================================================================
 Page Formation
@@ -593,11 +809,9 @@ Page Formation
       color: white;
       font-size: 60px;
       font-weight: 600;
-      text-transform: uppercase;
       padding: 20px; }
     .programme-header h3 {
       font-size: 30px;
-      text-transform: uppercase;
       color: #8dbc1f; }
   .programme-content #losanges-formation {
     transform: rotate(-45deg);
@@ -644,10 +858,11 @@ Page Formation
   .programme-content #accordion [data-toggle="collapse"].collapsed i:before {
     content: "\f078"; }
 
-/*@include xs {
-    html {
-        display: none;
-    }
-}*/
+@-webkit-keyframes shine {
+  100% {
+    left: 125%; } }
+@keyframes shine {
+  100% {
+    left: 125%; } }
 
 /*# sourceMappingURL=main.css.map */
