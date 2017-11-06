@@ -1,6 +1,38 @@
-        <footer>
-
-        </footer>
+            <footer>
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-6 col-xl-3 offset-xl-2">
+                        <p>Nos réseaux sociaux</p>
+                        <div class="social-medias">
+                            <i class="fa fa-facebook-f"></i>
+                            <i class="fa fa-twitter"></i>
+                            <i class="fa fa-linkedin"></i>
+                        </div>
+                        <div class="university-logos">
+                            <img src="http://via.placeholder.com/107x84" alt="">
+                            <img src="http://via.placeholder.com/122x44" alt="">
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-xl-3 ">
+                        <div class="links">
+                            <p>Autres liens</p>
+                            <a href="#">Association plasma</a><br/>
+                            <a href="#">Plan du site</a><br/>
+                            <a href="#">Mentions légales</a><br/>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-xl-3">
+                        <p>Département Multimédia</p>
+                        <div class="adresse">
+                            <p>UFR STGI</p>
+                            <p>4 place Tharradin</p>
+                            <p>25200 Montbéliard</p>
+                        </div>
+                        <p>Tel. +33 3 81 99 46 62</p>
+                        <a href="btn btn-psm-transparent"></a>
+                    </div>
+                </div>
+            </footer>
+        </div>
         <script type="text/javascript" src="js/vendor/jquery-3.2.1.min.js"></script>
         <script type="text/javascript" src="js/vendor/jquery.touchSwipe.min.js"></script>
         <script type="text/javascript" src="js/vendor/popper.min.js"></script>

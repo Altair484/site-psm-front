@@ -9,7 +9,7 @@
 /* ==========================================================================
 General
 ========================================================================== */
-*{
+*>:not(path), *>:not(g) > {
     font-family: sans-serif;
     box-sizing: border-box;
     margin: 0;
@@ -17,6 +17,7 @@ General
 }
 
 html{
+    margin: 0;
     font-size: 62.5%;
 }
 
@@ -85,15 +86,133 @@ b{
 NAVIGATION
 ========================================================================== */
 
-header {
+/*header {
     position: fixed;
     top: 0;
     right: 0;
     left: 0;
     z-index: 1030;
+}*/
+
+#main-content {
+    position: relative;
+    right: 0;
 }
 
-.navbar {
+#main-nav {
+    -webkit-transition:  left 0.4s ease-in-out;
+    -moz-transition:  left 0.4s ease-in-out;
+    -ms-transition:  left 0.4s ease-in-out;
+    -o-transition:  left 0.4s ease-in-out;
+    transition:  left 0.4s ease-in-out;
+
+    .logo-psm-nav-mobile {
+        height: 58px;
+        position: fixed;
+        z-index: 1030;
+        left: 0px;
+        top:-100vw;
+        background: $secondaire-bleu;
+        svg {
+            padding: 5px;
+            height: 100%;
+            #texte_1_ {
+                fill: white;
+            }
+        }
+    }
+    .burger {
+        position: fixed;
+        z-index: 1030;
+        right:0px;
+        top:0px;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+
+        #sidebar-toggle {
+            display: block;
+            position: relative;
+            padding: 20px;
+            float: left;
+            background-color: $secondaire-bleu;
+            span.bar{
+                display: block;
+                width: 30px;
+                margin-bottom: 6px;
+                height: 2px;
+                background-color: #f0f0f0;
+                border-radius: 1px;
+
+                &:last-child{
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    #sidebar {
+        position: fixed;
+        z-index: 1029;
+        right:-100vw;
+        top:0;
+        height: 100vh;
+        width: 100vw;
+        background: rgba(32, 49, 60, 0.8);
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        @include transition(all 1s ease);
+
+        &.open-sidebar{
+            right: 0!important;
+            @include transition(all 1s ease);
+        }
+
+        ul {
+            width: 100%;
+            height: 100%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            flex-wrap: wrap;
+
+            margin:  0;
+            padding: 0!important;
+            list-style: none;
+
+            li{
+                display: inline-block;
+
+                &:hover{
+                    background-color: $secondaire-noir;
+                }
+
+                a {
+                    @include setup-font($lovelo, white, normal);
+                    @include responsive-font(2,5rem, 5rem, 4rem, 3.5rem, 3rem);
+                    @include transition(all 1s ease);
+                    display: inline-block;
+                    width: 100%;
+                    text-align: center;
+                    list-style: none;
+                    margin: 0;
+                    -webkit-transition:  background 0.3s ease-in-out;
+                    -moz-transition:  background 0.3s ease-in-out;
+                    -ms-transition:  background 0.3s ease-in-out;
+                    -o-transition:  background 0.3s ease-in-out;
+                    transition:  background 0.3s ease-in-out;
+
+                    &.active, &:hover {
+                        color: $primaire-vert;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*.navbar {
     height: 100%;
     background-color: transparent;
     //Todo: Ajouter cette classe à toutes les pages qui n'ont pas besoin d\'un menu transparent
@@ -138,7 +257,7 @@ header {
             @include responsive-font(0,2.8rem)
         }
     }
-    
+
     #navbarSupportedContent {
         ul.navbar-nav{
             li.nav-item {
@@ -166,7 +285,7 @@ header {
             }
         }
     }
-}
+}*/
 
 
 /* ==========================================================================
@@ -221,7 +340,7 @@ WELCOME PAGE - SECTION WELCOME
 
                p{
                    @include setup-font($sourceSansPro,$tertiaire-gris-blanc, normal);
-                   @include responsive-font(1,2.8rem, 2.4rem, 2.4rem, 1.8rem, 1.6rem);
+                   @include responsive-font(0,2.8rem, 2.4rem, 2.4rem, 1.8rem, 1.6rem);
                }
            }
         }
@@ -251,7 +370,6 @@ WELCOME PAGE - SECTION WELCOME
         @include xs-md{
             /* Portrait */
             @media screen and (orientation:portrait) {
-                padding-top: 100px;
                 height: 40vh;
             }
         }
@@ -349,6 +467,7 @@ WELCOME PAGE - SECTION PRESENTATION
     }
 
     .losange{
+        @include transition(all 1s ease);
         &:nth-of-type(1) {
             z-index: -1;
             margin:auto;
@@ -380,7 +499,7 @@ WELCOME PAGE - SECTION PRESENTATION
 
         &:nth-of-type(4) {
             z-index: -4;
-            top:-10%;
+            bottom:110%;
             right: 2%;
             height: 150px;
             width: 150px;
@@ -439,15 +558,15 @@ WELCOME PAGE - SECTION FORMATIONS
             transition: 0.5s;
 
             &:nth-child(1) {
-                @include background-image-opacity("../img/6.jpg", rgba(52, 73, 94, 0.8));
+                @include background-image-opacity("../img/1.jpg", rgba(52, 73, 94, 0.8));
             }
 
             &:nth-child(2) {
-                @include background-image-opacity("../img/7.jpg", rgba(32, 49, 60, 0.8));
+                @include background-image-opacity("../img/2.jpg", rgba(32, 49, 60, 0.8));
             }
 
             &:nth-child(3) {
-                @include background-image-opacity("../img/6.jpg", rgba(141, 188, 31, 0.8));
+                @include background-image-opacity("../img/1.jpg", rgba(141, 188, 31, 0.8));
             }
 
             @include lg{
@@ -473,9 +592,11 @@ WELCOME PAGE - SECTION FORMATIONS
             }
 
             h2, h2 > span.writing-letter>span{
+                //Remove to trigger initial JS speed
+                @include transition(all 1s ease);
                 position: relative;
                 z-index: 1;
-                @include setup-font($lovelo, white, normal);
+                @include setup-font($lovelo, white!important, normal);
                 @include responsive-font(0,5rem);
 
                 span.writing-letter>span{
@@ -595,6 +716,7 @@ WELCOME PAGE - SECTION PROJECTS
     }
 
     .losange{
+        @include transition(all 1s ease);
         &:nth-of-type(1) {
             z-index: -1;
             top:29%;
@@ -805,6 +927,7 @@ WELCOME PAGE - SECTION PRESENTATION
     }
 
     .losange{
+        @include transition(all 1s ease);
         &:nth-of-type(1) {
             z-index: -1;
             top:20%;
@@ -942,6 +1065,56 @@ Page Formation
 
 
 
+
+
+
+/* ==========================================================================
+FOOTER
+========================================================================== */
+
+footer{
+    padding: 30px 0 30px 0;
+    @include xs{
+        height: 150vh;
+    }
+
+    @include sm{
+        height: 100vh;
+    }
+
+    @include md{
+        height:75vh;
+    }
+
+    @include lg{
+        height: 50vh;
+    }
+
+    background-color: $secondaire-noir;
+    div.col-12{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: stretch;
+        padding: 30px;
+        p, a {
+            @include setup-font($sourceSansPro, white, normal);
+            @include responsive-font(0,2rem);
+        }
+        .social-medias, .university-logos{
+            display: flex;
+            justify-content: space-between;
+            i {
+                @include setup-font($fontAwsome, white, normal);
+                @include responsive-font(0,4rem);
+            }
+            img{
+                align-self: center;
+            }
+        }
+    }
+
+}
 //Keyframes
 @-webkit-keyframes shine {
     100% {

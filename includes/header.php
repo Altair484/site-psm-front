@@ -22,15 +22,41 @@
     <!-- Custom styles CSS -->
     <link href="css/main.css" rel="stylesheet" media="screen">
 </head>
-<body>
+<body id="main-content">
 <!--[if lt IE 8]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
 
 <header class="header">
+    <nav id="main-nav">
+        <div class="logo-psm-nav-mobile">
+            <?php include('img/svg/psm-logo.svg'); ?>
+        </div>
+        <div class="burger">
+            <a href="#" data-toggle="#main-nav" id="sidebar-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </a>
+        </div>
+        <div id="sidebar">
+            <ul>
+                <li><a href="#" class="active">Accueil</a></li>
+                <li><a href="#">Formations</a></li>
+                <li><a href="#">Projets</a></li>
+                <li><a href="#">Espace pro</a></li>
+                <li><a href="#">Actualités</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Connexion</a></li>
+                <li><a href="#">Inscription</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
     <!--Todo: Ajouter la classe full-black pour les pages sans section menu transparent-->
-    <nav class="navbar navbar-expand-lg navbar-light ">
-        <a class="navbar-brand" href="#"><?php include('img/svg/psm-logo.svg'); ?></a>
+   <!-- <nav class="navbar navbar-expand-lg navbar-light ">
+        <a class="navbar-brand" href="#"><?php /*include('img/svg/psm-logo.svg'); */?></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <i class="fa fa-bars"></i>
         </button>
@@ -72,7 +98,8 @@
                 </li>
             </ul>
         </div>
-    </nav>
+    </nav>-->
 
 </header>
+<div class="container-fuild">
 

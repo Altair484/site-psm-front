@@ -724,8 +724,8 @@ jQuery(document).ready(function( $ ) {
         tl_losange1_presentation.to(losange_presentation_1, 0.5, {scale: 3, ease: Linear.easeNone});
         tl_losange2_presentation.to(losange_presentation_2, 0.5, {top: "-100px", ease: Linear.easeNone});
         tl_losange3_presentation.to(losange_presentation_3, 0.5, {top: "-75px", ease: Linear.easeNone});
-        tl_losange4_presentation.to(losange_presentation_4, 1, {top: "90%", ease: Linear.easeNone})
-            .to(losange_presentation_4, 1, {rotation: 225, transformOrigin: "50%"}, '-=1');
+        tl_losange4_presentation.to(losange_presentation_4, 1, {bottom: "0px", ease: Linear.easeNone})
+        .to(losange_presentation_4, 1, {rotation: 180, transformOrigin: "50%",ease: Linear.easeNone}, '-=1');
 
 
         //Geometric 1 Scene
@@ -922,14 +922,14 @@ jQuery(document).ready(function( $ ) {
                 .addTo(news_section_animation_controller);
         });
     }
+
+    //TODO:menu
     //alert($(window).width());
-
-
-
-
-
-
-
+    $("[data-toggle]").click(function(e) {
+        e.preventDefault();
+        var toggle_el = $('#sidebar');
+        $(toggle_el).toggleClass("open-sidebar");
+    });
 
 
 
