@@ -8,6 +8,7 @@
 	.st3{display:none;}
 	.st4{display:inline;fill:url(#sur1_1_);}
 	.st5{display:inline;fill:url(#sur2_1_);}
+	#texte_1_{fill:white;}
 </style>
 <g id="texte_1_">
 	<path id="p" d="M65.5,174.7h6.9c1.1,0,2,0.2,2.7,0.5s1.2,0.7,1.6,1.2s0.6,1,0.8,1.6c0.1,0.6,0.2,1.1,0.2,1.6s-0.1,1-0.2,1.6

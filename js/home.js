@@ -1,104 +1,7 @@
-/*(function ($) {
-    var element = $('.losange');
-
-    element.on('click', function(event) {
-        element.css('transform','scale(1)');
-        TweenMax.to($(this), 0.2, {scale:1.3});
-    })
-})(jQuery);*/
-
 jQuery(document).ready(function( $ ) {
-
-    /* ==========================================================================
-     GENERAL
-     ========================================================================== */
-
-    /**
-     * MENU ANIMATION DROPDOWN
-     *
-     * @description create a little slide up effect when the dropdown menu is selected
-     * @author Jeff Jardon
-     * */
-    // Add slideup & fadein animation to dropdown
-    var nav_dropdown = $('.dropdown');
-    nav_dropdown.on('show.bs.dropdown', function (e) {
-        var $dropdown = $(this).find('.dropdown-menu');
-        var orig_margin_top = parseInt($dropdown.css('margin-top'));
-        $dropdown.css({
-            'margin-top': (orig_margin_top + 10) + 'px',
-            opacity: 0
-        }).animate({'margin-top': orig_margin_top + 'px', opacity: 1}, 300, function () {
-            $(this).css({'margin-top': ''});
-        });
-    });
-    // Add slidedown & fadeout animation to dropdown
-    nav_dropdown.on('hide.bs.dropdown', function (e) {
-        var $dropdown = $(this).find('.dropdown-menu');
-        var orig_margin_top = parseInt($dropdown.css('margin-top'));
-        $dropdown.css({
-            'margin-top': orig_margin_top + 'px',
-            opacity: 1,
-            display: 'block'
-        }).animate({'margin-top': (orig_margin_top + 10) + 'px', opacity: 0}, 300, function () {
-            $(this).css({'margin-top': '', display: ''});
-        });
-    });
-
-    /**
-     * SCROLLING MENU
-     *
-     * @description When the user scroll to the top of section 2, navbar autmaticly become black
-     * @author Jeff Jardon
-     * */
-        //Init ScrollMagic
-    var ScrollMenuBackgroundController = new ScrollMagic.Controller();
-    //Show the background (black) of the main navigation
-    var blackMenuScene = new ScrollMagic.Scene({
-        triggerElement: 'section:nth-child(2)',
-        triggerHook: 0
-    })
-        .setClassToggle('.navbar', 'bg-black')//Addclass to .navbar
-        .addIndicators({
-            name: 'black nav',
-            colorTrigger: 'red',
-            indent: 0,
-            colorStart: '#75CC395'
-        })
-        .addTo(ScrollMenuBackgroundController);
-
-    //
-
-    /* ==========================================================================
-     WELCOME PAGE - GLOBAL
-     ========================================================================== */
-    /**
-     * SCROLLING MENU
-     *
-     * @description When the user scroll to the bottom of section #welcome-section, the logo appear in the navbar
-     * @author Jeff Jardon
-     * */
-        //Init ScrollMagic
-    var ScrollMenuLogoController = new ScrollMagic.Controller();
-    //Hide the logo from the first section of homepage
-    var hideLogoScene = new ScrollMagic.Scene({
-        triggerElement: '#welcome-section',
-        duration: '100%',
-        triggerHook: 0
-    })
-        .setClassToggle('.navbar-brand', 'hide-logo')//Addclass to .navbar
-        .addIndicators({
-            name: 'Hide logo',
-            colorTrigger: 'red',
-            indent: 150,
-            colorStart: '#75CC395'
-        })
-        .addTo(ScrollMenuLogoController);
-
-
     /* ==========================================================================
      WELCOME PAGE - SECTION WELCOME
      ========================================================================== */
-
     /**
      * IDEE TWEEN MAX ANIMATION
      *
@@ -107,6 +10,7 @@ jQuery(document).ready(function( $ ) {
      *
      * @author Federico Borsoi
      * */
+
         //Each objects animated in the SVG
     var idee = $('#idee'),
         tete_idee = $('#tete_idee'),
@@ -124,8 +28,8 @@ jQuery(document).ready(function( $ ) {
         .to(bras_droit_idee, 0.3, {rotation: 70, transformOrigin: "15% 90%"}, 0.5)
         .to(bras_gauche_idee, 0.3, {rotation: 120, transformOrigin: "90% 30%"}, 0.5)
         .set(tung_al, {className: "+=show"}, 0.7)
-        .set(tung_et, {className: "+=hide"}, 0.7)
-        .set(eteinte, {className: "+=hide"}, 0.7)
+        .set(tung_et, {className: "+=hidden"}, 0.7)
+        .set(eteinte, {className: "+=hidden"}, 0.7)
         .set(allumee, {className: "+=show"}, 0.7)
         .fromTo(ampoule, 0.15, {rotation: -10, transformOrigin: "50%, 50%"}, {
             rotation: 10,
@@ -385,7 +289,6 @@ jQuery(document).ready(function( $ ) {
         //Select state of the navigation (bulls and arrows class)
         select_state();
     }
-
     //END IDEE OPEN
 
     /**
@@ -706,8 +609,8 @@ jQuery(document).ready(function( $ ) {
      * Only displayed on devices greater thant 768 width px (tablet landscape and more)
      * @author Jeff Jardon
      * */
+    var controllerPresentationSection = new ScrollMagic.Controller();
     if ($(window).width() > 768) {
-        var controllerPresentationSection = new ScrollMagic.Controller();
         // Declade timelines for each geometrics
         var tl_losange1_presentation = new TimelineMax,
             tl_losange2_presentation = new TimelineMax,
@@ -725,18 +628,16 @@ jQuery(document).ready(function( $ ) {
         tl_losange2_presentation.to(losange_presentation_2, 0.5, {top: "-100px", ease: Linear.easeNone});
         tl_losange3_presentation.to(losange_presentation_3, 0.5, {top: "-75px", ease: Linear.easeNone});
         tl_losange4_presentation.to(losange_presentation_4, 1, {bottom: "0px", ease: Linear.easeNone})
-        .to(losange_presentation_4, 1, {rotation: 180, transformOrigin: "50%",ease: Linear.easeNone}, '-=1');
+            .to(losange_presentation_4, 1, {rotation: 180, transformOrigin: "50%",ease: Linear.easeNone}, '-=1');
 
 
         //Geometric 1 Scene
         new ScrollMagic.Scene({
             triggerElement: "#presentation-section",
             duration: '400',
-            triggerHook: 0.5,
-            //offset: 475
+            triggerHook: 0.5
         })
             .setTween(tl_losange1_presentation)
-            //.setPin("#presentation-section")
             .addIndicators({name: "losange 1 scale"}) // add indicators (requires plugin)
             .addTo(controllerPresentationSection);
 
@@ -772,6 +673,89 @@ jQuery(document).ready(function( $ ) {
     }
     // END PRESENTATION BACKGROUND ELEMENTS ANIMATION
 
+    /**
+     * ANIMATION WRITING KEYWORD GUY
+     *
+     * @author Federico Borsoi
+     * */
+
+    var objets_anac1 = $("#items-anac1"),
+        costume_anac1 = $("#costume-anac1"),
+        avantbras_g_anac1 = $("#avantbras-g-anac1"),
+        avantbras_d_anac1 = $("#avantbras-d-anac1"),
+        bras_g_anac1 = $("#bras-g-anac1"),
+        bras_d_anac1 = $("#bras-d-anac1"),
+        bouche_anac1 = $('#bouche-anac1');
+
+    var tl_anac1 = new TimelineMax/*({repeat:-1})*/;
+
+    var comptxP = -600,
+        comptxI = 500,
+        comptx = comptxP,
+        compty = 0,
+        compteur = 0,
+        quand = 0;
+
+    tl_anac1.to(avantbras_g_anac1, 0.2, {rotation:10, repeat:55, yoyo:true, transformOrigin:"100% 0", ease:Power0.easeNone},0);
+    tl_anac1.to(avantbras_d_anac1, 0.2, {rotation:-10, repeat:55, yoyo:true, ease:Power0.easeNone}, 0.2);
+
+    tl_anac1.to(bras_d_anac1, 0.5, {rotation:-5, transformOrigin:"50% 0"}, 2);
+    tl_anac1.to(bras_g_anac1, 0.5, {rotation:5}, 4);
+    tl_anac1.to(bras_g_anac1, 0.5, {rotation:-5}, 7);
+    tl_anac1.to(bras_d_anac1, 0.5, {rotation:0, transformOrigin:"50% 0"}, 10);
+    tl_anac1.to(bras_g_anac1, 0.5, {rotation:0}, 11);
+
+    tl_anac1.to(bras_d_anac1, 0.5, {rotation:-10, transformOrigin:"50% 0", y:5}, 12.5);
+    tl_anac1.to(bras_g_anac1, 0.5, {rotation:10}, 12.5);
+    tl_anac1.to(avantbras_d_anac1, 0.5, {rotation:20, transformOrigin:"0 15%"}, 12.5);
+    tl_anac1.to(avantbras_g_anac1, 0.5, {rotation:-20, transformOrigin:"90% 20%"}, 12.5);
+
+    objets_anac1.children().each(function(){
+        tl_anac1.to($(this), 3, {scale:3, x: comptx, y: compty, opacity:0}, quand);
+        if(compteur%2 == 0){
+            comptx=comptxP;
+        } else {
+            comptx=comptxI;
+        }
+        if(comptxP<310){
+            comptxP +=32;
+        }
+        if(comptxI>-600){
+            comptxI -=42;
+        }
+
+        if(compty>-500){
+            if(compteur>=27){
+                compty +=30;
+            } else{
+                compty -=30;
+            }
+        }
+        quand += 0.2;
+        compteur +=1;
+    });
+
+    objets_anac1.children().each(function(){
+        tl_anac1.to($(this), 0.2, {opacity:1}, 13);
+        tl_anac1.to($(this), 0.5, {scale:0, x:70, y:-130}, 13);
+    });
+    tl_anac1.to(costume_anac1, 0.3, {opacity:1}, 13.2);
+
+    costume_anac1.children().each(function(){
+        tl_anac1.from($(this), 1, {fill:"#8dbc1f"}, 13.2);
+    });
+
+    tl_anac1.from(bouche_anac1, 1, {x:80, rotation:-80, transformOrigin:"100% 0%"});
+
+    new ScrollMagic.Scene({
+        triggerElement: "#presentation-section #presentation-picture",
+        triggerHook: "onEnter"
+    })
+        .addIndicators({name: "Writing guy", indent: 800}) // add indicators (requires plugin)
+        .addTo(controllerPresentationSection)
+        .setTween(tl_anac1);
+
+
     /* ==========================================================================
      WELCOME PAGE - SECTION FORMATIONS
      ========================================================================== */
@@ -784,7 +768,7 @@ jQuery(document).ready(function( $ ) {
      * @author Jeff Jardon
      * */
 
-    //Declare Timelines
+        //Declare Timelines
     var tl_writting_letters_formations_licence = new TimelineMax;
     var tl_writting_letters_formations_master1 = new TimelineMax;
     var tl_writting_letters_formations_master2 = new TimelineMax;
@@ -843,7 +827,7 @@ jQuery(document).ready(function( $ ) {
                     break;
             }
         })
-    //Display the animation on scroll on devices lesser than 1024px
+        //Display the animation on scroll on devices lesser than 1024px
     } else {
         var Scroll_formations_section = new ScrollMagic.Controller();
 
@@ -884,6 +868,67 @@ jQuery(document).ready(function( $ ) {
     }
 
     /* ==========================================================================
+     WELCOME PAGE - SECTION PROJECTS
+     ========================================================================== */
+    /**
+     * PROJECTS BACKGROUND ELEMENTS ANIMATION
+     *
+     * @description trigger a Scroll animation on background elements (losanges)
+     * Only displayed on devices greater thant 768 width px (tablet landscape and more)
+     * @author Jeff Jardon
+     * */
+    var controllerProjectsSection = new ScrollMagic.Controller();
+    if ($(window).width() > 768) {
+        // Declade timelines for each geometrics
+        var tl_losange1_projects = new TimelineMax,
+            tl_losange2_projects = new TimelineMax,
+            tl_losange3_projects = new TimelineMax;
+
+
+        //Find each geometrics elements in html
+        var losange_projects_1 = $('#projects-section').find('.losange:nth-child(1)'),
+            losange_projects_2 = $('#projects-section').find('.losange:nth-child(2)'),
+            losange_projects_3 = $('#projects-section').find('.losange:nth-child(3)');
+
+        //Set the animation they will execute
+        tl_losange1_projects.to(losange_projects_1, 0.5, {top: "-100px", ease: Linear.easeNone});
+        tl_losange2_projects.to(losange_projects_2, 0.5, {top: "200px", ease: Linear.easeNone});
+        tl_losange3_projects.to(losange_projects_3, 1, {bottom: "-300px", right: "60%", ease: Linear.easeNone})
+            .to(losange_projects_3, 1, {css:{scaleX:0.1,scaleY:0.1, rotation:30}, ease:Power3.easeOut}, '-=1');
+
+        //Geometric 1 Scene
+        new ScrollMagic.Scene({
+            triggerElement: "#projects-section",
+            duration: '400',
+            triggerHook: 0.5
+        })
+            .setTween(tl_losange1_projects)
+            .addIndicators({name: "losange 1 scale"}) // add indicators (requires plugin)
+            .addTo(controllerProjectsSection);
+
+        //Geometric 2 Scene
+        new ScrollMagic.Scene({
+            triggerElement: "#projects-section",
+            duration: "100%",
+            triggerHook: 0.5
+        })
+            .setTween(tl_losange2_projects)
+            .addIndicators({name: "losange 2 translate", indent: 200}) // add indicators (requires plugin)
+            .addTo(controllerProjectsSection);
+
+        //Geometric 3 Scene
+        new ScrollMagic.Scene({
+            triggerElement: "#projects-section",
+            duration: "100%",
+            triggerHook: 0.5
+        })
+            .setTween(tl_losange3_projects)
+            .addIndicators({name: "losange 3 translate", indent: 300}) // add indicators (requires plugin)
+            .addTo(controllerProjectsSection);
+    }
+    // END PROJECTS BACKGROUND ELEMENTS ANIMATION
+
+    /* ==========================================================================
      WELCOME PAGE - SECTION NEWS
      ========================================================================== */
 
@@ -896,10 +941,10 @@ jQuery(document).ready(function( $ ) {
      * @author Jeff Jardon
      */
 
-    //Declare new Scroll Magic Controller
+        //Declare new Scroll Magic Controller
     var news_section_animation_controller = new ScrollMagic.Controller;
     //find html elements to animate
-    var thumbnail_news = $("#news-section").find('.news').find('figure');
+    var thumbnail_news = $("#news-section").find('.news').find('.thumbnail');
 
     //Hover toggle class on greater devices
     if ($(window).width() > 1024) {
@@ -909,9 +954,9 @@ jQuery(document).ready(function( $ ) {
         thumbnail_news.mouseout(function () {
             $(this).removeClass("active");
         })
-    //Scroll toggle class on smaller devices
+        //Scroll toggle class on smaller devices
     }else {
-       thumbnail_news.each(function () {
+        thumbnail_news.each(function () {
             new ScrollMagic.Scene({
                 triggerElement: this,
                 duration: "50%",
@@ -923,29 +968,63 @@ jQuery(document).ready(function( $ ) {
         });
     }
 
-    //TODO:menu
-    //alert($(window).width());
-    $("[data-toggle]").click(function(e) {
-        e.preventDefault();
-        var toggle_el = $('#sidebar');
-        $(toggle_el).toggleClass("open-sidebar");
-    });
+    /* ==========================================================================
+     WELCOME PAGE - SECTION professional
+     ========================================================================== */
+    /**
+     * professional BACKGROUND ELEMENTS ANIMATION
+     *
+     * @description trigger a Scroll animation on background elements (losanges)
+     * Only displayed on devices greater thant 768 width px (tablet landscape and more)
+     * @author Jeff Jardon
+     * */
+    var controllerProfessionalSection = new ScrollMagic.Controller();
+    if ($(window).width() > 768) {
+        // Declade timelines for each geometrics
+        var tl_losange1_professional = new TimelineMax,
+            tl_losange2_professional = new TimelineMax,
+            tl_losange3_professional = new TimelineMax;
 
 
+        //Find each geometrics elements in html
+        var losange_professional_1 = $('#professional-section').find('.losange:nth-child(1)'),
+            losange_professional_2 = $('#professional-section').find('.losange:nth-child(2)'),
+            losange_professional_3 = $('#professional-section').find('.losange:nth-child(3)');
 
+        //Set the animation they will execute
+        tl_losange1_professional.to(losange_professional_1, 0.5, {top: "-100px", ease: Linear.easeNone});
+        tl_losange2_professional.to(losange_professional_2, 0.5, {top: "200px", ease: Linear.easeNone});
+        tl_losange3_professional.to(losange_professional_3, 0.5, {top: "60%", ease: Linear.easeNone});
 
-    /*var ScrollMenuBackgroundController = new ScrollMagic.Controller();
-    //Show the background (black) of the main navigation
-    var blackMenuScene = new ScrollMagic.Scene({
-        triggerElement: 'section:nth-child(2)',
-        triggerHook:0
-    })
-        .setClassToggle('.navbar', 'bg-black')//Addclass to .navbar
-        .addIndicators({
-            name:'black nav',
-            colorTrigger: 'red',
-            indent: 200,
-            colorStart: '#75CC395'
+        //Geometric 1 Scene
+        new ScrollMagic.Scene({
+            triggerElement: "#professional-section",
+            duration: '400',
+            triggerHook: 0.5
         })
-        .addTo(ScrollMenuBackgroundController);*/
-});
+            .setTween(tl_losange1_professional)
+            .addIndicators({name: "losange 1 scale"}) // add indicators (requires plugin)
+            .addTo(controllerProfessionalSection);
+
+        //Geometric 2 Scene
+        new ScrollMagic.Scene({
+            triggerElement: "#professional-section",
+            duration: "100%",
+            triggerHook: 0.5
+        })
+            .setTween(tl_losange2_professional)
+            .addIndicators({name: "losange 2 translate", indent: 200}) // add indicators (requires plugin)
+            .addTo(controllerProfessionalSection);
+
+        //Geometric 3 Scene
+        new ScrollMagic.Scene({
+            triggerElement: "#professional-section",
+            duration: "100%",
+            triggerHook: 0.5
+        })
+            .setTween(tl_losange3_professional)
+            .addIndicators({name: "losange 3 translate", indent: 300}) // add indicators (requires plugin)
+            .addTo(controllerProfessionalSection);
+    }
+    // END professional BACKGROUND ELEMENTS ANIMATION
+},jQuery);

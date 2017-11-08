@@ -28,7 +28,7 @@
                             <p>25200 Montbéliard</p>
                         </div>
                         <p>Tel. +33 3 81 99 46 62</p>
-                        <a href="btn btn-psm-transparent"></a>
+                        <a href="#" class="btn btn-transparent">Nous contacter</a>
                     </div>
                 </div>
             </footer>
@@ -41,6 +41,10 @@
         <script type="text/javascript" src="js/vendor/scrollMagic.min.js"></script>
         <script type="text/javascript" src="js/vendor/animation.gsap.min.js"></script>
         <script type="text/javascript" src="js/vendor/debug.addIndicators.min.js"></script>
-        <script type="text/javascript" src="js/main.js"></script>
+        <script type="text/javascript" src="js/general.js"></script>
+        <?php if($file == 'index.php'){ ?>
+            <script type="text/javascript" src="js/home.js"></script>
+            <script type="text/javascript" src="js/menu.js"></script>
+        <?php } ?>
     </body>
 </html>

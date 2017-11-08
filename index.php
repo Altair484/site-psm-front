@@ -1,11 +1,10 @@
 <?php include_once ('includes/header.php'); ?>
-
 <section id="welcome-section">
     <div class="filter"></div>
     <div class="row">
         <div id="welcome-left-collumn" class="col-12 col-md-7 d-flex align-content-center flex-wrap">
             <div id="logo-welcome" class="col-7 offset-1 no-padding hidden-md-down">
-                <?php include('img/svg/psm-logo.svg'); ?>
+                <img src="img/svg/psm-logo.svg" alt="Logo de la seciton accueil du site PSM">
             </div>
             <div id="svg-slider-texte" class="col-12 col-sm-10 offset-sm-1 no-padding">
                 <div id="text-slider-container">
@@ -55,16 +54,16 @@
         <div id="welcome-right-collumn" class="col-12 col-md-5">
             <div id="animations_home">
                 <div class="col-8 offset-2 col-md-12 offset-md-0  svg-container d-flex align-items-center" id="idee">
-                    <?php include('img/svg/idee.svg'); ?>
+                    <?php echo file_get_contents('img/svg/idee.svg'); ?>
                 </div>
                 <div class="col-8 offset-4 col-md-12 offset-md-0  svg-container d-flex align-items-center" id="reunion">
-                    <?php include('img/svg/reunion.svg'); ?>
+                    <?php  echo file_get_contents('img/svg/reunion.svg'); ?>
                 </div>
                 <div class="col-8 offset-4 col-md-12 offset-md-0  svg-container d-flex align-items-center" id="travail">
-                    <?php include('img/svg/travail.svg'); ?>
+                    <?php echo file_get_contents('img/svg/travail.svg'); ?>
                 </div>
                 <div class="col-8 offset-4 col-md-12 offset-md-0  svg-container d-flex align-items-center" id="deploiement">
-                    <?php include('img/svg/deploiement.svg'); ?>
+                    <?php echo file_get_contents('img/svg/deploiement.svg'); ?>
                 </div>
             </div>
         </div>
@@ -78,8 +77,8 @@
         <div class="losange"></div>
         <div id="presentation-content" class="offset-0 offset-md-2 col-12 col-md-9">
             <div class="row">
-                <div id="presentation-picture" class="col-12 col-md-3">
-                    <img src="http://via.placeholder.com/960x540" alt="">
+                <div id="presentation-picture" class="col-12 col-md-3 no-padding">
+                    <?php echo file_get_contents('img/svg/anac1.svg'); ?>
                 </div>
                 <div id="presentation-text" class="col-12 col-md-9 d-flex justify-content-center align-items-start flex-column">
                     <h2>Passionnés et Super Motivés !</h2>
@@ -153,9 +152,8 @@
                     <a href="">
                         <img src="img/1.jpg" class="portrait" alt="">
                     </a>
-                    <span class="line"></span>
                 </figure>
-
+                <span class="line"></span>
             </div>
             <div class="text-news-container col-12">
                 <h3>Actualité 1</h3>
@@ -170,9 +168,8 @@
                     <a href="">
                         <img src="img/2.jpg" class="portrait" alt="">
                     </a>
-                    <span class="line"></span>
                 </figure>
-
+                <span class="line"></span>
             </div>
             <div class="text-news-container col-12">
                 <h3>Actualité 1</h3>
@@ -187,8 +184,8 @@
                     <a href="">
                         <img src="img/1.jpg" class="portrait" alt="">
                     </a>
-                    <span class="line"></span>
                 </figure>
+                <span class="line"></span>
             </div>
             <div class="text-news-container col-12">
                 <h3>Actualité 1</h3>

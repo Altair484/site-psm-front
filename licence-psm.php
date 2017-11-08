@@ -115,6 +115,6 @@
 <script src="js/vendor/tether.min.js"></script>
 <script src="js/vendor/bootstrap.min.js"></script>
 <script src="js/vendor/tweenmax.min.js"></script>
-<script src="js/main.js"></script>
+<script src="js/general.js"></script>
 </body>
 </html>

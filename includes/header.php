@@ -1,8 +1,9 @@
 <!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="fr"> <!--<![endif]-->
+<!--[if IE 7]><html lang="fr" class="ie7"><![endif]-->
+<!--[if IE 8]><html lang="fr" class="ie8"><![endif]-->
+<!--[if IE 9]><html lang="fr" class="ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><html lang="en"><![endif]-->
+<!--[if !IE]><html lang="fr-FR"><![endif]-->
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -27,11 +28,9 @@
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
 
+<?php $file =  basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING']); ?>
 <header class="header">
     <nav id="main-nav">
-        <div class="logo-psm-nav-mobile">
-            <?php include('img/svg/psm-logo.svg'); ?>
-        </div>
         <div class="burger">
             <a href="#" data-toggle="#main-nav" id="sidebar-toggle">
                 <span class="bar"></span>
@@ -39,67 +38,36 @@
                 <span class="bar"></span>
             </a>
         </div>
-        <div id="sidebar">
+        <!--Todo: class is-home -> php conditions-->
+        <div id="sidebar" class="<?php if($file == 'index.php')echo('is-home') ?> open-sidebar" >
+            <div id="logo-psm-nav" >
+                <img src="img/svg/psm-logo.svg" alt="Logo du menu PSM">
+            </div>
             <ul>
                 <li><a href="#" class="active">Accueil</a></li>
-                <li><a href="#">Formations</a></li>
+                <li class="dropdown">
+                    <p>Formations&nbsp;<i class="fa fa-chevron-down"></i></p>
+                    <div class="dropdown-content">
+                        <a href="#">Licence PSM</a>
+                        <a href="#">Master 1 PSM</a>
+                        <a href="#">Master 2 PSM</a>
+                    </div>
+                </li>
                 <li><a href="#">Projets</a></li>
                 <li><a href="#">Espace pro</a></li>
                 <li><a href="#">Actualités</a></li>
                 <li><a href="#">Contact</a></li>
-                <li><a href="#">Connexion</a></li>
-                <li><a href="#">Inscription</a></li>
+                <li class="dropdown">
+                    <i class="fa fa-power-off"></i>
+                    <div class="dropdown-content">
+                        <a href="#">Connexion</a>
+                        <a href="#">Inscription</a>
+                    </div>
+                </li>
             </ul>
         </div>
     </nav>
-
-
-    <!--Todo: Ajouter la classe full-black pour les pages sans section menu transparent-->
-   <!-- <nav class="navbar navbar-expand-lg navbar-light ">
-        <a class="navbar-brand" href="#"><?php /*include('img/svg/psm-logo.svg'); */?></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="fa fa-bars"></i>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#"><i class="fa fa-home"></i><span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Formations
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Licence PSM</a>
-                        <a class="dropdown-item" href="#">Master PSM</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Projets</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Espace pro</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Actualités</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                </li>
-                <li id="login-register-dropdown" class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fa fa-power-off"></i>
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Connexion</a>
-                        <a class="dropdown-item" href="#">Inscription</a>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </nav>-->
-
 </header>
 <div class="container-fuild">
+
 
