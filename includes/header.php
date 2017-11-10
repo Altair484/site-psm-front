@@ -39,7 +39,7 @@
             </a>
         </div>
         <!--Todo: class is-home -> php conditions-->
-        <div id="sidebar" class="<?php if($file == 'index.php')echo('is-home') ?> open-sidebar" >
+        <div id="sidebar" class="<?php if($file == 'index.php' || 'master.php')echo('is-home') ?>" >
             <div id="logo-psm-nav" >
                 <img src="img/svg/psm-logo.svg" alt="Logo du menu PSM">
             </div>
@@ -68,6 +68,6 @@
         </div>
     </nav>
 </header>
-<div class="container-fuild">
+<div class="container-fluid no-padding">
 
 

@@ -150,7 +150,7 @@
             <div class="thumbnail">
                 <figure>
                     <a href="">
-                        <img src="img/1.jpg" class="portrait" alt="">
+                        <img src="http://via.placeholder.com/960x540" alt="">
                     </a>
                 </figure>
                 <span class="line"></span>
@@ -166,7 +166,7 @@
             <div class="thumbnail">
                 <figure>
                     <a href="">
-                        <img src="img/2.jpg" class="portrait" alt="">
+                        <img src="http://via.placeholder.com/960x540" alt="">
                     </a>
                 </figure>
                 <span class="line"></span>
@@ -182,7 +182,7 @@
             <div class="thumbnail">
                 <figure>
                     <a href="">
-                        <img src="img/1.jpg" class="portrait" alt="">
+                        <img src="http://via.placeholder.com/960x540" alt="">
                     </a>
                 </figure>
                 <span class="line"></span>

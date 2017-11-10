@@ -46,5 +46,9 @@
             <script type="text/javascript" src="js/home.js"></script>
             <script type="text/javascript" src="js/menu.js"></script>
         <?php } ?>
+        <?php if($file == 'master.php'){ ?>
+            <script type="text/javascript" src="js/master.js"></script>
+            <script type="text/javascript" src="js/menu.js"></script>
+        <?php } ?>
     </body>
 </html>

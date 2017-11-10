@@ -1,3 +1,5 @@
+/*alert('Bonour, cette page fait partie de notre projet de fin d\'étude et est en cours de développement. Celle-ci peut comporter des problèmes d\'affichages sur les' +
+    'navigateurs récents. Page uploadée. Le 9/11/17.');*/
 jQuery(document).ready(function( $ ) {
     /* ==========================================================================
      WELCOME PAGE - SECTION WELCOME

@@ -8,13 +8,13 @@ jQuery(document).ready(function( $ ) {
     //Init ScrollMagic
     var ScrollMenuBackgroundController = new ScrollMagic.Controller();
     //Show the background (black) of the main navigation
-    new ScrollMagic.Scene({triggerElement: 'section:nth-child(2)', triggerHook: 0.5})
+    new ScrollMagic.Scene({triggerElement: 'section:nth-child(2), #masters', triggerHook: 0.5})
         .setClassToggle('#sidebar', 'dark-menu')
         .addIndicators({name: 'dark menu show', colorTrigger: 'red', indent: 700, colorStart: 'pink'})
         .addTo(ScrollMenuBackgroundController);
 
     //Show the logo of the main navigation
-    new ScrollMagic.Scene({triggerElement: 'section:nth-child(2)', triggerHook: 0.5})
+    new ScrollMagic.Scene({triggerElement: 'section:nth-child(2), #masters', triggerHook: 0.5})
         .setClassToggle('#logo-psm-nav', 'show-logo')
         .addIndicators({name: 'logo show', colorTrigger: 'red', indent: 600, colorStart: 'pink'})
         .addTo(ScrollMenuBackgroundController);
@@ -26,25 +26,38 @@ jQuery(document).ready(function( $ ) {
      * @description The user click on the burger menu, this one will come from outside of the screen
      * @author Jeff Jardon
      * */
-    var sidebar = $('#sidebar');
-    var links = sidebar.find('a,i,li');
-    var timeLineLinks = new TimelineMax;
-    timeLineLinks.staggerFrom(links, 0.5, {x:-200,autoAlpha:0, scale:0.1}, 0.05);
+    if ($(window).width() < 992) {
+        var sidebar = $('#sidebar');
+        var links = sidebar.find('a');
+        var timeLineLinks = new TimelineMax;
+        var forward = false;
+        timeLineLinks.staggerFrom(links, 0.5, {x: -200, scale: 0.1, autoAlpha: 0, ease: Power2.easeIn}, 0.1);
 
-    $("[data-toggle]").click(function(e) {
-        e.preventDefault();
-        //Open sidebar
-        $(sidebar).toggleClass("open-sidebar");
-
-        //Animation
-        if(timeLineLinks.reversed()){
+        $("[data-toggle]").click(function (e) {
+            e.preventDefault();
+            //Animation
             timeLineLinks.timeScale(1);
-            timeLineLinks.play()
-        } else {
-            timeLineLinks.timeScale(4);
-            timeLineLinks.reverse();
-        }
-    });
+            if (!forward)//timeline is going forward so we should reverse it
+            {
+                timeLineLinks.timeScale(1);
+                timeLineLinks.play();
+
+            }
+            else//timeline is going backwards, so we should make it go forward
+            {
+                timeLineLinks.timeScale(4);
+                timeLineLinks.reverse();
+            }
+            //this toggles the boolean on each click event
+            if(forward) {
+                forward = false;
+            } else {
+                forward = true;
+            }
+            //Open sidebar
+            $(sidebar).toggleClass("open-sidebar");
+        });
+    }
     //END CLICK BURGER ANIMATION
 
     /**
@@ -59,12 +72,5 @@ jQuery(document).ready(function( $ ) {
         $(dropdown).toggleClass("open-dropdown");
     });
     //END CLICK DROPDOWNS
-
-    /**
-     * OPEN MENU ANIMATION MOBILE
-     *
-     *
-     * */
-
 
 },jQuery);

@@ -1,10 +1,13 @@
+//Import mixins
+@import 'partials/mixin/mixin';
+
 //Import partials
 @import 'partials/general';
 @import 'partials/typography';
 @import 'partials/variables';
+@import 'partials/page-accueil';
 
-//Import mixins
-@import 'partials/mixin/mixin';
+
 
 /* ==========================================================================
 General
@@ -90,6 +93,10 @@ b{
         &:hover{background-color: white;color:black!important;cursor: pointer}
         &:active{background-color: white;color:black;}
     }
+}
+
+.container-fluid{
+    background-color: $secondaire-noir;
 }
 
 /* ==========================================================================
@@ -321,689 +328,166 @@ header {
     }
 }
 
-/* ==========================================================================
-WELCOME PAGE - SECTION WELCOME
-========================================================================== */
-#welcome-section {
-    @include background-image-opacity("../img/dept-mm.jpg", rgba(32, 49, 60, 0.8));
 
-    .row{
-        position: relative;
-        z-index: 1;
-        flex-direction: row;
-        @include xs-md{
-            flex-direction: column-reverse;
-        }
-    }
 
-    #welcome-left-collumn {
-        height: 100vh;
 
-        @include xs-md{
-            @media screen and (orientation:portrait) {
-                height:60vh;
-            }
-        }
-
-        #logo-welcome{
-            display: none;
-            @include lg{
-                display: block;
-            }
-            svg,object,img {
-                padding-bottom: 5%;
-                width: 75%;
-
-            }
-        }
-
-        #svg-slider-texte {
-            overflow: hidden;
-           #text-slider-container{
-               text-align: left;
-               color:#e8e8e8;
-               display: flex;
-
-               h3{
-                   @include setup-font($lovelo,$primaire-vert, normal);
-                   @include responsive-font(0,3.6rem,2.8rem, 2.8rem, 1.8rem, 1.8rem);
-               }
-
-               p{
-                   @include setup-font($sourceSansPro,$tertiaire-gris-blanc, normal);
-                   @include responsive-font(0,2.4rem, 2.4rem, 2.4rem, 1.8rem, 1.6rem);
-               }
-           }
-        }
-
-        ul#svg-slider-nav{
-            li{
-                list-style: none;
-                &:first-of-type i, &:last-of-type i{font-size:5rem}
-                i {
-                    @include setup-font($fontAwsome,$tertiaire-gris-blanc,700);
-                    transition-duration: 0.2s;
-                    &.inactive { color: $light-grey;}
-                    &.inactive:hover {color: $light-grey; cursor: default;}
-                    &.selected {color: $primaire-vert;}
-                    &:hover {cursor: pointer; color: white;}
-                }
-            }
-        }
-    }
-
-    #welcome-right-collumn {
-        height: 100vh;
-        background-color: rgba(52, 73, 94, 0.5);
-        //transition-duration: 0.5s;
-        overflow: hidden;
-
-        @include xs-md{
-            /* Portrait */
-            @media screen and (orientation:portrait) {
-                height: 40vh;
-            }
-        }
-
-        #animations_home{
-            display: flex;
-            height: 100%;
-            .svg-container{
-                svg,object,img{
-                    width:100%;
-                    max-height: 100%;
-                    @include landscapeTablettePhones{
-                        margin-top: 100px;
-                        height: 60%;
-                    }
-                }
-            }
-        }
-    }
-}
 
 /* ==========================================================================
-WELCOME PAGE - SECTION PRESENTATION
+MASTER 1/2 PAGE - SECTION VIDEO
 ========================================================================== */
 
-#presentation-section {
-    overflow: hidden;
-    .row {
-        position: relative;
-        z-index: 1;
-    }
-    @include xs-md {
-        min-height: 100vh;
-    }
-    @include md{
-        height:100vh;
-    }
+#video-master-section{
+    min-height: 100vh;
     width: 100%;
-    background-color: $secondaire-bleu;
+    position: relative;
 
-    #presentation-content{
-        height: 100%;
-        position: relative;
-        z-index: 1;
-
-        @include xs-md {
-            padding: 30px 0 30px 0;
-            min-height: 100vh;
-        }
-
-        @include md{
-            flex-direction: row;
-            height: 75vh;
-        }
-
-        @include xl(){
-            height: 50vh;
-        }
-
-
-
-        background-color: $tertiaire-gris-blanc;
-        #presentation-picture{
-            svg,object,img {
-                @include md(){
-                    height: 100%;
-                    width: 300%;
-                    position: absolute;
-                    margin: auto;
-                    left:-150%;
-                    top:0;
-                    bottom: 0;
-
-                }
-            }
-        }
-
-        #presentation-text {
-
-            @include xs-md(){
-                justify-content: center !important;
-                align-items: center !important;
-            }
-            h2{
-                padding-top: 30px;
-                @include setup-font($lovelo, $primaire-vert, 300);
-                @include responsive-font(0,2.4rem)
-            }
-
-            p{
-                @include setup-font($sourceSansPro, black, 300);
-                @include responsive-font(1,1.6rem)
-            }
-        }
-    }
-
-    .losange{
-        @include transition(all 1s ease);
-        &:nth-of-type(1) {
-            z-index: -1;
-            margin:auto;
-            top:0;
-            left:0;
-            bottom: 0;
-            right:0;
-            height: 200px;
-            width: 200px;
-            background-color: $primaire-vert;
-        }
-
-        &:nth-of-type(2) {
-            z-index: -3;
-            top:80%;
-            left: 5%;
-            height: 300px;
-            width: 300px;
-            background-color: $secondaire-noir;
-        }
-        &:nth-of-type(3) {
-            z-index: -2;
-            top:20%;
-            left: 20%;
-            height: 150px;
-            width: 150px;
-            background-color: $primaire-vert;
-        }
-
-        &:nth-of-type(4) {
-            z-index: -4;
-            bottom:110%;
-            right: 2%;
-            height: 150px;
-            width: 150px;
-            background-color: $secondaire-noir;
-        }
-
+    h1{
         position: absolute;
-        transform: rotate(-45deg);
-    }
-}
-
-/* ==========================================================================
-WELCOME PAGE - SECTION FORMATIONS
-========================================================================== */
-
-#formations-section{
-    height: 100vh;
-    @include landscapeTablettePhones{
-        height: 300vh!important;
+        z-index: 3;
+        bottom:50px;
+        left:100px;
+        @include setup-font($sourceSansPro,white,300);
+        @include responsive-font(0,3.6rem);
     }
 
-    .formations {
-        align-items: stretch;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -ms-flex-flow: row nowrap;
-        flex-flow: row nowrap;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-
-        @include xs{
-            flex-direction: column;
-        }
-
-        @include md{
-            flex-direction: row;
-        }
-
-        @include landscapeTablettePhones{
-            flex-direction: column!important;
-        }
-
-        .formation {
-            display: flex;
-            -webkit-box-flex: 1;
-            -ms-flex: 1;
-            flex: 1;
-            justify-content: center;
-            align-items: center;
-
-            text-align: center;
-            background-color: #ccc;
-            min-width: 10%;
-            -webkit-transition: 0.5s;
-            transition: 0.5s;
-
-            &:nth-child(1) {
-                @include background-image-opacity("../img/1.jpg", rgba(52, 73, 94, 0.8));
-            }
-
-            &:nth-child(2) {
-                @include background-image-opacity("../img/2.jpg", rgba(32, 49, 60, 0.8));
-            }
-
-            &:nth-child(3) {
-                @include background-image-opacity("../img/1.jpg", rgba(141, 188, 31, 0.8));
-            }
-
-            @include lg{
-                &:hover {
-                    -webkit-box-flex: 2;
-                    -ms-flex-positive: 2;
-                    flex-grow: 3;
-
-                    .filter::after{
-                        background-color:transparent;
-                    }
-                }
-            }
-
-            .filter.activeScroll{
-                &:after{
-                    background-color:transparent;
-                }
-            }
-
-            .filter:after{
-                @include transition(all 0.5s ease);
-            }
-
-            h2, h2 > span.writing-letter>span{
-                //Remove to trigger initial JS speed
-                position: relative;
-                z-index: 1;
-                @include setup-font($lovelo, white!important, normal);
-                @include responsive-font(0,5rem);
-
-                span.writing-letter>span{
-                    display:inline-block;
-                }
-            }
-        }
-    }
-}
-
-/* ==========================================================================
-WELCOME PAGE - SECTION PROJECTS
-========================================================================== */
-
-#projects-section {
-    width: 100%;
-    background-color: $secondaire-noir;
-    overflow: hidden;
-
-    .row {
-        position: relative;
-        z-index: 1;
-        @include xs-md {
-            display: flex;
-            flex-direction: column-reverse;
-        }
-    }
-    @include xs-md {
-        min-height: 100vh;
-    }
-    @include md{
-        height:100vh;
-    }
-
-
-    #projects-content{
-        height: 100%;
-        position: relative;
-        z-index: 1;
-
-        @include xs-md {
-            padding: 30px 0 30px 0;
-            min-height: 100vh;
-        }
-
-        @include md{
-            min-height: 75vh;
-            max-height: 90vh;
-            flex-direction: row;
-        }
-
-        @include xl(){
-            min-height: 50vh;
-            height: 50vh;
-        }
-
-        background-color: $tertiaire-gris-blanc;
-        #projects-picture{
-            svg,object,img {
-                @include md(){
-                    height: 100%;
-                    width: 300%;
-                    position: absolute;
-                    margin: auto;
-                    right:-150%;
-                    top:0;
-                    bottom: 0;
-
-                }
-            }
-        }
-
-        #projects-text {
-            @include xs(){
-                justify-content: center !important;
-                align-items: center !important;
-            }
-
-            @include md(){
-                align-items: flex-start !important;
-            }
-            h2{
-                padding-top: 30px;
-                @include setup-font($lovelo, $primaire-vert, 300);
-                @include responsive-font(0,2.4rem)
-            }
-
-            p{
-                @include setup-font($sourceSansPro, black, 300);
-                @include responsive-font(1,1.6rem);
-                @include md(){
-                    text-align: left;
-                }
-            }
-            .btns-box{
-
-                @include xs-sm() {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    flex-direction: column;
-                }
-
-                a.btn:first-of-type {
-                    @include sm() {
-                        margin-right: 30px !important;
-                    }
-                }
-            }
-        }
-    }
-    @include xs-md() {
-        div.col-md-2 {
-            display: none;
-        }
-    }
-
-    .losange{
-        @include transition(all 1s ease);
-        &:nth-of-type(1) {
-            z-index: -1;
-            top:29%;
-            left:43%;
-            height: 30vw;
-            width: 30vw;
-            background-color: $secondaire-bleu;
-        }
-
-        &:nth-of-type(2) {
-            z-index: -2;
-            top:15%;
-            right: 11%;
-            height: 20vw;
-            width: 20vw;
-            background-color: $primaire-vert;
-        }
-        &:nth-of-type(3) {
-            z-index: -3;
-            bottom:80%;
-            right: 29%;
-            height: 10vw;
-            width: 10vw;
-            background-color: $primaire-vert;
-        }
-
-        position: absolute;
-        transform: rotate(-45deg);
-    }
-}
-
-/* ==========================================================================
-WELCOME PAGE - SECTION NEWS
-========================================================================== */
-
-#news-section{
-    background-color: $tertiaire-gris-blanc;
-    .thumbnail{
-        position: relative;
+    .video-background {
+        position: fixed;
+        bottom:0;
+        left: 0;
         width: 100%;
-        height: 33vh;
+        height: 100%;
+        z-index: 0;
+        background-color: $secondaire-noir;
+        @include transition(all 0.2s ease);
 
-        @include landscapeTablettePhones{
-            height: 60vh!important;
+        &.miniature{
+            bottom: 10px;
+            height: auto;
+
+            @include xs {
+                width: 142px;
+                height: 80px;
+                left: calc(100% - 142px - 10px);
+            }
+
+            @include md{
+                width: 196px;
+                height: 110px;
+                left: calc(100% - 196px - 10px);
+            }
+
+            @include lg{
+                width: 249px;
+                height: 140px;
+                left: calc(100% - 249px - 10px);
+            }
+
+            @include xl{
+                width: 320px;
+                height: 180px;
+                left: calc(100% - 320px - 10px);
+            }
+
+            z-index: 2!important;
         }
-        overflow: hidden;
 
-        .line {
+        .video-foreground, .video-foreground > iframe{
             position: absolute;
-            z-index: 2;
-            bottom: 0;
-            width: 0px;
-            height: 5px;
-            background-color: $primaire-vert;
-            @include transition(all 0.5s ease);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            &:hover {
+                cursor: pointer;
+            }
         }
 
-        figure{
-            position: relative;
-            margin: 0!important;
-            padding: 0!important;
+        &:not(.miniature) {
+            @media (min-aspect-ratio: 16/9) {
+                &{ height: 300%; top: -100%; }
+            }
+            @media (max-aspect-ratio: 16/9) {
+                &{ width: 300%; left: -100%; }
+            }
         }
+    }
+}
 
+/* ==========================================================================
+MASTER 1/2 PAGE - TOGGLE SECTIONS
+========================================================================== */
 
-        @include transition(all 0.5s ease);
+#masters {
+    #toggle-masters {
+        height: 20vh;
+        width: 100%;
+        overflow: hidden;
+        background-color: $secondaire-noir;
+        z-index: 1;
+        position: relative;
 
-        img{
+        .choose-training{
             @include transition(all 0.5s ease);
             width: 100%;
-            height: auto;
-            min-height: 100%;
-        }
-
-
-        &.active{
-            &::before {
-                position: absolute;
-                top: 0;
-                left: -75%;
-                z-index: 2;
-                display: block;
-                content: '';
-                width: 50%;
-                height: 100%;
-                background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .3) 100%);
-                background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .3) 100%);
-                -webkit-transform: skewX(-25deg);
-                transform: skewX(-25deg);
-            }
-            &::before {
-                -webkit-animation: shine .75s;
-                animation: shine .75s;
-            }
-
-            img{
-                width: 110%;
-            }
-            .line {
-                width: 100%;
-                @include transition(all 0.5s ease);
-                position: absolute;
-            }
-
-        }
-    }
-
-    .text-news-container{
-        height: 33vh;
-        @include landscapeTablettePhones(){
-            height: 60vh!important;
-        }
-        padding: 30px 15px 30px 15px;
-
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        h3{
-            @include setup-font($lovelo, black, normal);
-            @include responsive-font(0,2.4rem);
-        }
-
-        p.date{
-            @include setup-font($sourceSansPro, black, 300);
-            font-style: italic;
-            @include responsive-font(0, 1.6rem);
-        }
-
-        p.excerpt{
-            @include setup-font($sourceSansPro, black, 300);
-            @include responsive-font(0, 1.6rem);
-        }
-    }
-    .see-all-news{
-        height: 33vh;
-    }
-}
-
-/* ==========================================================================
-WELCOME PAGE - SECTION PRESENTATION
-========================================================================== */
-#professional-section {
-    overflow: hidden;
-    .row {
-        position: relative;
-        z-index: 1;
-    }
-    @include xs-md {
-        min-height: 100vh;
-    }
-    @include md{
-        height:100vh;
-    }
-    width: 100%;
-    background-color: $secondaire-bleu;
-
-    #professional-content{
-        height: 100%;
-        position: relative;
-        z-index: 1;
-
-        @include xs-md {
-            padding: 30px 0 30px 0;
-            min-height: 100vh;
-        }
-
-        @include md{
+            height: 100%;
+            display: flex;
             flex-direction: row;
-            height: 75vh;
-        }
+            justify-content:center;
+            align-items: center;
 
-        @include xl(){
-            height: 50vh;
-        }
+            background-color: $secondaire-noir;
 
-
-
-        background-color: $tertiaire-gris-blanc;
-        #professional-picture{
-            svg,object,img {
-                @include md(){
-                    height: 100%;
-                    width: 300%;
-                    position: absolute;
-                    margin: auto;
-                    left:-150%;
-                    top:0;
-                    bottom: 0;
-
-                }
-            }
-        }
-
-        #professional-text {
-
-            @include xs-md(){
-                justify-content: center !important;
-                align-items: center !important;
-            }
-            h2{
-                padding-top: 30px;
-                @include setup-font($lovelo, $primaire-vert, 300);
-                @include responsive-font(0,2.4rem)
+            &:hover{
+                cursor: pointer;
+                background-color: $primaire-vert;
             }
 
-            p{
-                @include setup-font($sourceSansPro, black, 300);
-                @include responsive-font(1,1.6rem)
+            button{
+                outline: none;
+                background-color: transparent;
+                border: none;
+                @include setup-font($lovelo,white,normal);
+                @include responsive-font(0,3rem);
+            }
+
+            &.active{
+                background-color: $primaire-vert;
             }
         }
     }
 
-    .losange{
-        @include transition(all 1s ease);
-        &:nth-of-type(1) {
-            z-index: -1;
-            top:20%;
-            left:18%;
-            height: 30vw;
-            width: 30vw;
-            background-color: $secondaire-noir;
+    #master-1,#master-2 {
+        display: none;
+        &.selected {
+            display: block!important;
         }
-
-        &:nth-of-type(2) {
-            z-index: -3;
-            top:40%;
-            right: 11%;
-            height: 20vw;
-            width: 20vw;
-            background-color: $secondaire-noir;
-        }
-        &:nth-of-type(3) {
-            z-index: -2;
-            top:5%;
-            left: 15%;
-            height: 10vw;
-            width: 10vw;
-            background-color: $primaire-vert;
-        }
-
-        position: absolute;
-        transform: rotate(-45deg);
     }
 }
 
-
-
 /* ==========================================================================
-Page Formation
+MASTER 1 TOGGLE - SECTION MASTER PRESENTATION
 ========================================================================== */
 
-// Section Programmes
-.programme {
+#master-1-presentation-section{
     height: 100vh;
-    margin-bottom: 60px !important;
+    width: 100%;
+    overflow: hidden;
+    background-color: red;
+    z-index: 1;
+    position: relative;
+}
 
-    //Programmes Header
-    &-header {
-        height: 300px;
+/* ==========================================================================
+MASTER 1 TOGGLE - SECTION MASTER PROGRAMMES
+========================================================================== */
+#master-1-programme-section{
+    height: 100vh;
+    position: relative;
+    z-index: 1;
+
+    .header {
+        height: 30vh;
         background-color: $secondaire-noir;
         display: flex;
         flex-direction: column;
@@ -1011,88 +495,246 @@ Page Formation
         align-items: center;
 
         h2 {
-            color: white;
-            font-size: 60px;
-            font-weight: 600;
-            padding: 20px;
+            @include setup-font($lovelo,white,normal);
+            @include responsive-font(0,3rem);
+            @include lg{
+                margin-right: 20vw;
+            }
         }
 
         h3 {
-            font-size: 30px;
-            color: $primaire-vert;
+            padding-top: 30px;
+            @include setup-font($lovelo,$primaire-vert,normal);
+            @include responsive-font(0,2.4rem);
         }
     }
     //Programmes Content
-    &-content {
-        //Losanges
-        #losanges-formation {
-            transform: rotate(-45deg);
-            position: relative;
-            margin-top: 100px;
-            height: 200px;
-            width: 200px;
+    .programme-container {
+        height: 70vh;
+        background-color: $tertiaire-gris-blanc;
+        display: flex;
+        justify-content: center;
+        .programme-content{
+            @include lg{
+                width: $screen-lg;
+            }
+            @include xl{
+                width: $screen-xl;
+            }
+            .losanges-container{
+                display: flex;
+                justify-content: center;
+                .losange-origine {
+                    transform: rotate(-45deg);
+                    position: relative;
+                    margin-top: 100px;
+                    @include lg{
+                        height: 150px;
+                        width: 150px;
+                    }
+                    @include xl {
+                        height: 200px;
+                        width: 200px;
+                    }
 
-            .losange {
-                box-shadow: 0 8px 5px 0 rgba(0, 0, 0, 0.12), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
-                height: 100%;
-                width: 100%;
-                position: absolute;
-                transition-duration: 0.5s;
-                color: white;
-                background-color: $secondaire-bleu;
-                line-height: 200px;
+                    .losange {
+                        overflow: hidden;
+                        box-shadow: 0 8px 5px 0 rgba(0, 0, 0, 0.12), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+                        height: 100%;
+                        width: 100%;
+                        position: absolute;
+                        transition-duration: 0.5s;
+                        color: white;
+                        background-color: $secondaire-bleu;
+                        @include lg{
+                            line-height: 150px;
+                        }
+                        @include xl{
+                            line-height: 200px;
+                        }
+                    }
+
+                    div.losange {
+                        &:nth-child(1) {
+                            top: -55%;
+                            left: 55%;
+                        }
+                        &:nth-child(2) {
+                            background-color: $secondaire-noir;
+                            top: 55%;
+                            left: 55%;
+                        }
+                        &:nth-child(3) {
+                            top: 55%;
+                            left: -55%;
+                        }
+                        &:nth-child(4) {
+                            top: -55%;
+                            left: -55%;
+                        }
+                        &:hover {
+                            &:not(.no-hover){
+                                z-index: 5;
+                                cursor: pointer;
+                                background-color: $primaire-vert;
+
+                            }
+
+                        }
+                        &.active {
+                            z-index: 5;
+                            background-color: $primaire-vert;
+                        }
+
+                        i{
+                            opacity: 1;
+                            @include transition(all 0.5s ease);
+                        }
+                    }
+
+                    .losange h4 {
+                        @include setup-font($lovelo, white, normal);
+                        @include responsive-font(0,2rem, 1.3rem, 1.6rem,1.6rem,1.6rem);
+                        text-indent: -1000px;
+                        @include lg{
+                            height: 150px;
+                            width: 150px;
+                            line-height: 150px;
+                        }
+
+                        @include xl{
+                            height: 200px;
+                            width: 200px;
+                            line-height: 200px;
+                        }
+
+
+                        text-align: center;
+                        transform: rotate(45deg);
+                        transition: 0.5s ease;
+                    }
+
+                    .losange:hover{
+                        h4{  text-indent: 0;  }
+
+                        i{ opacity: 0; }
+                    }
+
+                    i{
+                        height: 90px;
+                        width: 100px;
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        margin: auto;
+                        left: 0;
+                        right: 0;
+
+                        font-size: 8rem;
+                        text-align: center;
+                        transform: rotate(45deg);
+                    }
+                }
             }
 
-            div.losange {
-                &:nth-child(1) {
-                    top: -55%;
-                    left: 55%;
+            //Accordion
+            .accordeon-container{
+                @include xl{
+                    position: relative;
                 }
-                &:nth-child(2) {
-                    top: 55%;
-                    left: 55%;
-                }
-                &:nth-child(3) {
-                    top: 55%;
-                    left: -55%;
-                }
-                &:nth-child(4) {
-                    top: -55%;
-                    left: -55%;
-                }
-                &:hover {
-                    z-index: 100;
-                    cursor: pointer;
-                    background-color: $primaire-vert;
-                }
-                &.active {
-                    z-index: 100;
-                    /*transform: scale(1.3);*/
-                    background-color: $primaire-vert;
-                }
-            }
 
-            .losange p {
-                transform: rotate(45deg);
-                display: block;
-                text-align: center;
-                transition: 0.5s ease;
-            }
-        }
+                .accordeon {
+                    width: 100%;
+                    @include transition(all 1s ease);
 
-        //Accordion
-        #accordion {
-            [data-toggle="collapse"] {
-                i:before {
-                    content: "\f077";
-                }
-                &.collapsed i:before {
-                    content: "\f078";
+                    &.show {  display: block;  }
+
+                    &.hide {  display: none;  }
+
+                    @include lg {
+                        width: 120%;
+                        position: absolute;
+                        top:69px;
+                        left:-131px;
+                    }
+                    @include xl {
+                        top:59px;
+                        left:-145px;
+                    }
+                    .accordeon-title {
+                        text-transform: lowercase;
+                        &:first-letter{
+                            text-transform: uppercase;
+                        }
+                        @include setup-font($sourceSansPro,white,300);
+                        @include responsive-font(0,2rem);
+                        background-color: $secondaire-noir;
+                        padding: 10px;
+                        cursor: pointer;
+                        border-bottom: 1px solid #e6e6e6;
+                        margin: 0;
+
+                        i{
+                            float: right;
+                        }
+                        i:after{
+                            content: '\f078';
+                            font-size: 0.8em;
+                            color: #f2f2f2;
+                            width: 20px;
+                            height: 20px;
+                            line-height: 20px;
+                            text-align: center;
+                        }
+                    }
+
+                    .accordeon-title.is-opened{
+                        i:after {
+                            content: '\f077';
+                        }
+                    }
+
+
+                    .accordeon-content {
+                        padding: 15px;
+                        p{
+                            @include setup-font($sourceSansPro,white,300);
+                            @include responsive-font(0,1.6rem);
+                        }
+                        p:last-of-type{
+                            margin: 0;
+                        }
+                        background-color: $secondaire-noir;
+                        display: none;
+                    }
                 }
             }
         }
     }
 }
+
+/* ==========================================================================
+MASTER 2 TOGGLE - SECTION MASTER PRESENTATION
+========================================================================== */
+
+#master-2-presentation-section{
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    background-color: #22ffee;
+    z-index: 1;
+    position: relative;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1104,6 +746,8 @@ FOOTER
 ========================================================================== */
 
 footer{
+    position: relative;
+    z-index: 1;
     padding: 30px 0 30px 0;
     @include xs{
         height: 150vh;
@@ -1144,7 +788,6 @@ footer{
             }
         }
     }
-
 }
 //Keyframes
 @-webkit-keyframes shine {
@@ -1157,3 +800,4 @@ footer{
         left: 125%;
     }
 }
+
