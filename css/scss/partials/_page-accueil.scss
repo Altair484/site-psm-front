@@ -1,6 +1,6 @@
-/* ==========================================================================
-WELCOME PAGE - SECTION WELCOME
-========================================================================== */
+/* ---------------------------------------------- /*
+ * Welcome page - Section WELCOME
+/* ---------------------------------------------- */
 #welcome-section {
     @include background-image-opacity("../img/dept-mm.jpg", rgba(32, 49, 60, 0.8));
 
@@ -37,6 +37,9 @@ WELCOME PAGE - SECTION WELCOME
         #svg-slider-texte {
             overflow: hidden;
             #text-slider-container{
+                @include xs-lg{
+                    padding-top: 20px;
+                }
                 text-align: left;
                 color:#e8e8e8;
                 display: flex;
@@ -55,6 +58,13 @@ WELCOME PAGE - SECTION WELCOME
 
         ul#svg-slider-nav{
             li{
+                @include xs-md{
+                    /*padding-top: 30px;
+                    &:first-of-type,&:last-of-type{
+                        display: none;
+                    }*/
+                    display: none;
+                }
                 list-style: none;
                 &:first-of-type i, &:last-of-type i{font-size:5rem}
                 i {
@@ -63,7 +73,7 @@ WELCOME PAGE - SECTION WELCOME
                     &.inactive { color: $light-grey;}
                     &.inactive:hover {color: $light-grey; cursor: default;}
                     &.selected {color: $primaire-vert;}
-                    &:hover {cursor: pointer; color: white;}
+                    &:hover {cursor: pointer; color: $primaire-vert;}
                 }
             }
         }
@@ -71,7 +81,7 @@ WELCOME PAGE - SECTION WELCOME
 
     #welcome-right-collumn {
         height: 100vh;
-        background-color: rgba(52, 73, 94, 0.5);
+        background-color: $secondaire-bleu;
         //transition-duration: 0.5s;
         overflow: hidden;
 
@@ -97,11 +107,26 @@ WELCOME PAGE - SECTION WELCOME
             }
         }
     }
+
+    .mouse{
+        display: none;
+        @include md{
+            display: block;
+        }
+    }
+
+    .swipe-container{
+        display: block;
+        @include md{
+            display: none;
+        }
+    }
+
 }
 
-/* ==========================================================================
-WELCOME PAGE - SECTION PRESENTATION
-========================================================================== */
+/* ---------------------------------------------- /*
+ * Welcome page - Section PRESENTATION
+/* ---------------------------------------------- */
 
 #presentation-section {
     overflow: hidden;
@@ -219,9 +244,9 @@ WELCOME PAGE - SECTION PRESENTATION
     }
 }
 
-/* ==========================================================================
-WELCOME PAGE - SECTION FORMATIONS
-========================================================================== */
+/* ---------------------------------------------- /*
+ * Welcome page - Section FORMATION
+/* ---------------------------------------------- */
 
 #formations-section{
     height: 100vh;
@@ -314,9 +339,9 @@ WELCOME PAGE - SECTION FORMATIONS
     }
 }
 
-/* ==========================================================================
-WELCOME PAGE - SECTION PROJECTS
-========================================================================== */
+/* ---------------------------------------------- /*
+ * Welcome page - Section PROJECTS
+/* ---------------------------------------------- */
 
 #projects-section {
     width: 100%;
@@ -455,9 +480,9 @@ WELCOME PAGE - SECTION PROJECTS
     }
 }
 
-/* ==========================================================================
-WELCOME PAGE - SECTION NEWS
-========================================================================== */
+/* ---------------------------------------------- /*
+ * Welcome page - Section NEWS
+/* ---------------------------------------------- */
 
 #news-section{
     background-color: $tertiaire-gris-blanc;
@@ -561,9 +586,9 @@ WELCOME PAGE - SECTION NEWS
     }
 }
 
-/* ==========================================================================
-WELCOME PAGE - SECTION PRESENTATION
-========================================================================== */
+/* ---------------------------------------------- /*
+ * Welcome page - Section PROFESSIONAL
+/* ---------------------------------------------- */
 #professional-section {
     overflow: hidden;
     .row {

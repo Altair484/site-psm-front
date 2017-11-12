@@ -1,4 +1,5 @@
 <?php include_once ('includes/header.php'); ?>
+<!-- Welcome section start -->
 <section id="welcome-section">
     <div class="filter"></div>
     <div class="row">
@@ -68,7 +69,16 @@
             </div>
         </div>
     </div>
+    <div class="mouse">
+        <div class="scroll"></div>
+    </div>
+    <div class="swipe-container">
+        <?php echo file_get_contents('img/svg/swipe.svg'); ?>
+    </div>
 </section>
+<!-- Welcome section end -->
+
+<!-- Presentation section start -->
 <section id="presentation-section">
     <div class="row justify-content-center align-items-center">
         <div class="losange"></div>
@@ -95,6 +105,9 @@
         </div>
     </div>
 </section>
+<!-- Presentation section end -->
+
+<!-- Formation section start -->
 <section id="formations-section">
     <div class="row formations">
         <a href="index.php" class="formation">
@@ -113,6 +126,9 @@
         </a>
     </div>
 </section>
+<!-- Formation section end -->
+
+<!-- Projects section start -->
 <section id="projects-section">
     <div class="row justify-content-center align-items-center">
         <div class="losange"></div>
@@ -144,6 +160,9 @@
         <div class="col-md-2"></div>
     </div>
 </section>
+<!-- Projects section end -->
+
+<!-- News section start -->
 <section id="news-section">
     <div class="row justify-content-around">
         <div class="news col-12 col-sm-6 col-xl-4 no-padding">
@@ -196,11 +215,14 @@
         </div>
         <div class="row w-100">
             <div class="see-all-news  d-flex justify-content-center align-items-center col-12">
-                <a class="btn btn-psm">Voir toutes les actualités</a>
+                <a href="#" class="btn btn-psm">Voir toutes les actualités</a>
             </div>
         </div>
     </div>
 </section>
+<!-- News section end -->
+
+<!-- Professional section start -->
 <section id="professional-section">
     <div class="row justify-content-center align-items-center">
         <div class="losange"></div>
@@ -228,6 +250,7 @@
         </div>
     </div>
 </section>
+<!-- Professional section end -->
 <?php include_once ('includes/footer.php'); ?>
 
 

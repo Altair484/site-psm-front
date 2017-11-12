@@ -30,6 +30,7 @@
 
 <?php $file =  basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING']); ?>
 <header class="header">
+    <!-- Navigation Start -->
     <nav id="main-nav">
         <div class="burger">
             <a href="#" data-toggle="#main-nav" id="sidebar-toggle">
@@ -38,7 +39,6 @@
                 <span class="bar"></span>
             </a>
         </div>
-        <!--Todo: class is-home -> php conditions-->
         <div id="sidebar" class="<?php if($file == 'index.php' || 'master.php')echo('is-home') ?>" >
             <div id="logo-psm-nav" >
                 <img src="img/svg/psm-logo.svg" alt="Logo du menu PSM">
@@ -67,6 +67,7 @@
             </ul>
         </div>
     </nav>
+    <!-- Navigation End -->
 </header>
 <div class="container-fluid no-padding">
 

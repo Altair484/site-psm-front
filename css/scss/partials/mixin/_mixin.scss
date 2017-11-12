@@ -7,6 +7,7 @@
 @mixin xs { @media (min-width: 1px) { @content;  } }
 // Small to medium
 @mixin sm-md { @media (min-width: #{$screen-sm}) and (max-width: #{$screen-md}) { @content; } }
+@mixin sm-lg { @media (min-width: #{$screen-sm}) and (max-width: #{$screen-lg}) { @content; } }
 // Small and more
 @mixin sm { @media (min-width: #{$screen-sm}) { @content; } }
 // Medium to large
@@ -33,13 +34,15 @@
 }
 
 //Mixin for background image opacity, no hover
-@mixin background-image-opacity($imgUrl:false, $backgroundColor:false) {
-    background-image: url($imgUrl);
-    background-position: center center;
-    background-size: cover;
+@mixin background-image-opacity($imgUrl:false, $backgroundColor:false, $z-index:false) {
+    @if $imgUrl {
+        background-image: url($imgUrl);
+        background-position: center center;
+        background-size: cover;
+    }
     overflow: hidden;
     position: relative;
-    z-index: 1;
+    @if $z-index {z-index: $z-index;}
 
 
     .filter::after {
@@ -51,7 +54,8 @@
         top: 0;
         position: absolute;
         width: 100%;
-        z-index: 1;
+        pointer-events: none;
+        @if $z-index {z-index: ($z-index+1);}@else{z-index: 1}
     }
 }
 
@@ -80,6 +84,19 @@
         }
     }@else{
         font-size: $sizeXl; line-height: $sizeXl+$offsetLineHeight;
+    }
+}
+
+@mixin lined-title ($color){
+    &:before,&:after {
+        display: inline-block;
+        margin: 0 0.5em;
+        width: 0.75em;
+        height: 0.06em;
+        background: $color;
+        content: '';
+        vertical-align: middle;
+        transition: all 0.3s;
     }
 }
 

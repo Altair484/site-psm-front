@@ -2,393 +2,126 @@
 @import 'partials/mixin/mixin';
 
 //Import partials
+@import 'partials/variables';
 @import 'partials/general';
 @import 'partials/typography';
-@import 'partials/variables';
 @import 'partials/page-accueil';
 
+/* ---------------------------------------------- /*
+ * Formations pages - Section BACKGROUND VIDEO
+/* ---------------------------------------------- */
 
+.psm-formations-background-video-section{
 
-/* ==========================================================================
-General
-========================================================================== */
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-html{
-    margin: 0;
-    font-size: 62.5%;
-}
-
-body{
-   // background-color: #17232d;
-    margin:0;
-}
-
-h1,h2,h3,h4{
-    text-transform: uppercase;
-}
-
-.row {
-    margin-right: 0!important;
-    margin-left: 0!important;
-    height: 100%;
-}
-
-.no-padding{
-    padding-left: 0!important;
-    padding-right: 0!important;
-}
-a{
-    color:$primaire-vert;
-}
-
-a:hover {
-    text-decoration: none;
-    //Todo: Define the hover colour
-    //color:$primaire-vert;
-}
-
-
-b{
-    font-family: $sourceSansPro;
-    font-weight: 600;
-}
-.show {
-    display: inline;
-}
-.hidden {
-    display: none !important;
-}
-
-.transparent {
-    visibility: hidden;
-}
-
-.bg-black {
-    background-color: $secondaire-noir!important;
-}
-
-.btn{
-    @include setup-font($sourceSansPro, white!important, 300);
-    @include responsive-font(0,2.1rem);
-    min-width: 200px;
-    text-transform: uppercase;
-    border-radius: 0!important;
-    padding: 10px 10px 10px 10px;
-    margin: 15px 0 15px 0;
-    &.btn-psm {
-        background-color: $secondaire-bleu;
-        &:hover{background-color: $primaire-vert;cursor: pointer}
-        &:active{background-color: $primaire-vert}
-    }
-
-    &.btn-transparent{
-        color: white;
-        border: 1px solid white;
-        background-color: transparent;
-        &:hover{background-color: white;color:black!important;cursor: pointer}
-        &:active{background-color: white;color:black;}
-    }
-}
-
-.container-fluid{
-    background-color: $secondaire-noir;
-}
-
-/* ==========================================================================
-NAVIGATION
-========================================================================== */
-
-header {
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: 1030;
-}
-
-#main-nav {
-    -webkit-transition:  left 0.4s ease-in-out;
-    -moz-transition:  left 0.4s ease-in-out;
-    -ms-transition:  left 0.4s ease-in-out;
-    -o-transition:  left 0.4s ease-in-out;
-    transition:  left 0.4s ease-in-out;
-
-    .burger {
-        @include lg {display: none}
-        z-index: 1031;
-        position: fixed;
-        right:0;
-        top:0;
-        box-sizing: border-box;
-        -moz-box-sizing: border-box;
-
-        #sidebar-toggle {
-            display: block;
-            position: relative;
-            padding: 20px;
-            float: left;
-            background-color: $secondaire-bleu;
-            span.bar{
-                display: block;
-                width: 30px;
-                margin-bottom: 6px;
-                height: 2px;
-                background-color: #f0f0f0;
-                border-radius: 1px;
-
-                &:last-child{
-                    margin-bottom: 0;
-                }
-            }
-        }
-    }
-
-    #sidebar {
-        position: fixed;
-        z-index: 1029;
-        right:-100vw;
-        top:0;
-        height: 100vh;
-        width: 100vw;
-        background-color: $secondaire-bleu;
-        box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        @include transition(all 0.4s ease);
-
-        @include xs-lg{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-
-        @include lg{
-            right:0;
-            height: 100px;
-            width: 100vw;
-            background-color: $secondaire-noir;
-
-            display: flex;
-            justify-content: space-between;
-        }
-
-        #logo-psm-nav {
-            height: 100px;
-            //opacity: 1;
-            @include transition(all 1s ease);
-
-            svg,object,img {
-                padding: 5px;
-                max-height: 100%;
-                width: 100%;
-            }
-        }
-
-        &.is-home{
-            @include lg {
-                &.dark-menu{
-                    background-color: $secondaire-noir;
-                }
-                background-color: transparent;
-                #logo-psm-nav {
-                    opacity: 0;
-                }
-            }
-
-            #logo-psm-nav{
-                &.show-logo {
-                    opacity: 1;
-                    @include lg{
-                        opacity: 1;
-                    }
-                }
-            }
-
-        }
-
-
-
-        &.open-sidebar{
-            right: 0!important;
-        }
-
-        ul {
-            list-style: none;
-            display: flex;
-            flex-wrap: wrap;
-            @include xs{
-                width: 100%;
-                //height: 100%;
-
-                justify-content: center;
-                align-items: center;
-                flex-direction: column;
-
-                margin:  0;
-                padding: 0;
-            }
-
-
-            @include lg{
-                justify-content: space-around;
-                flex-direction: row;
-            }
-
-            @include xl{
-                width: 50vw;
-            }
-
-            li{
-                display: inline-block;
-
-                a,p{
-                    @include setup-font($sourceSansPro, white, normal);
-                    @include responsive-font(1,1.8rem, 1.8rem, 3rem, 2.5rem, 2.5rem);
-                    text-transform: uppercase;
-                    display: inline-block;
-                    width: 100%;
-                    text-align: center;
-                    list-style: none;
-                    margin: 0;
-
-                    &.active, &:hover {
-                        color: $primaire-vert;
-                    }
-                }
-
-                i{
-                    @include responsive-font(0,1.8rem, 1.8rem, 3rem, 2.5rem, 2rem);
-                    color: white;
-                    text-align: center;
-                }
-
-                &:focus{
-                    color: $primaire-vert;
-                }
-
-                &:hover{
-                    cursor: pointer;
-
-                    i{
-                        color: $primaire-vert;
-                    }
-                }
-
-
-                &.dropdown{
-                    @include lg{
-                        position: relative;
-                    }
-
-                    p, p>i,i{
-                        display:none;
-                        @include lg{
-                            display: inline;
-                        }
-                    }
-
-                    .dropdown-content{
-                        @include lg{
-                            transform: scaleY(0);
-                            transition:all 1s ease;
-                            opacity:0;
-                            height: auto;
-                            top:0;
-                            position: absolute;
-                            border: solid 1px white;
-                            right:0;
-                            width: 200px;
-                        }
-
-                        background-color: $secondaire-bleu;
-                        a{
-                            padding: 2.5px 0 2.5px 0;
-                        }
-                    }
-                    .open-dropdown{
-                        transform: scaleY(1);
-                        height:auto;
-                        opacity:1;
-                        top:59px;
-                        display: inline!important;
-                    }
-                }
-            }
-        }
-
-        &.dark-menu ul .dropdown .open-dropdown{
-            border: none;
-            background-color: $secondaire-noir;
-        }
-    }
-}
-
-
-
-
-
-/* ==========================================================================
-MASTER 1/2 PAGE - SECTION VIDEO
-========================================================================== */
-
-#video-master-section{
     min-height: 100vh;
     width: 100%;
     position: relative;
 
+    .losange{
+
+        @include lg{
+            @include transition(all 1s ease);
+            &:nth-of-type(1) {
+                z-index: 1;
+                bottom:-12.5vw;
+                left:5%;
+                height: 25vw;
+                width: 25vw;
+                background-color: $secondaire-bleu;
+            }
+
+            &:nth-of-type(2) {
+                z-index: 1;
+                bottom:10%;
+                left: -5%;
+                height: 10vw;
+                width: 10vw;
+                background-color: $primaire-vert;
+            }
+
+            position: absolute;
+            transform: rotate(-45deg);
+        }
+    }
+
     h1{
         position: absolute;
         z-index: 3;
-        bottom:50px;
-        left:100px;
+
+        @include xs {
+            i{
+                display: none;
+            }
+            text-align: center;
+            vertical-align: middle;
+            margin: auto;
+            bottom:45%;
+            right: 0;
+            left: 0;
+        }
+        @include md{
+            i{
+                //display: block;
+            }
+            height: 100px;
+            margin: auto;
+            bottom: 0;
+            top:0;
+        }
+
         @include setup-font($sourceSansPro,white,300);
-        @include responsive-font(0,3.6rem);
+        @include responsive-font(0,3.6rem,3.3rem,3.1rem,2.8rem,2.5rem);
     }
 
     .video-background {
+        @include background-image-opacity(false,rgba(23, 35, 45, 0.7),1);
+        &:hover .filter:after{
+            pointer-events: auto!important;
+        }
         position: fixed;
-        bottom:0;
+        top:0;
         left: 0;
         width: 100%;
         height: 100%;
         z-index: 0;
         background-color: $secondaire-noir;
-        @include transition(all 0.2s ease);
+        @include transition(all 0.5s ease);
 
+        &.swipped:not(.miniature){
+            left: 0!important;
+        }
         &.miniature{
-            bottom: 10px;
             height: auto;
 
             @include xs {
                 width: 142px;
                 height: 80px;
+                top: calc(100% - 80px - 10px);
                 left: calc(100% - 142px - 10px);
             }
 
             @include md{
                 width: 196px;
                 height: 110px;
+                top: calc(100% - 110px - 10px);
                 left: calc(100% - 196px - 10px);
             }
 
             @include lg{
                 width: 249px;
                 height: 140px;
+                top: calc(100% - 140px - 10px);
                 left: calc(100% - 249px - 10px);
             }
 
             @include xl{
                 width: 320px;
                 height: 180px;
+                top: calc(100% - 180px - 10px);
                 left: calc(100% - 320px - 10px);
             }
 
-            z-index: 2!important;
+            z-index: 3!important;
         }
 
         .video-foreground, .video-foreground > iframe{
@@ -414,9 +147,9 @@ MASTER 1/2 PAGE - SECTION VIDEO
     }
 }
 
-/* ==========================================================================
-MASTER 1/2 PAGE - TOGGLE SECTIONS
-========================================================================== */
+/* ---------------------------------------------- /*
+ * Formations pages - Section TOGGLES FORMATIONS
+/* ---------------------------------------------- */
 
 #masters {
     #toggle-masters {
@@ -448,7 +181,7 @@ MASTER 1/2 PAGE - TOGGLE SECTIONS
                 background-color: transparent;
                 border: none;
                 @include setup-font($lovelo,white,normal);
-                @include responsive-font(0,3rem);
+                @include responsive-font(0,3.6rem,3rem,3rem,3rem,2.5rem);
             }
 
             &.active{
@@ -465,56 +198,132 @@ MASTER 1/2 PAGE - TOGGLE SECTIONS
     }
 }
 
-/* ==========================================================================
-MASTER 1 TOGGLE - SECTION MASTER PRESENTATION
-========================================================================== */
+/* ---------------------------------------------- /*
+ * Formations pages - Section PRESENTATION
+/* ---------------------------------------------- */
 
-#master-1-presentation-section{
-    height: 100vh;
-    width: 100%;
+.psm-formations-programme-section {
     overflow: hidden;
-    background-color: red;
-    z-index: 1;
     position: relative;
+    z-index: 1;
+    .row {
+        position: relative;
+        z-index: 1;
+    }
+    @include xs-md {
+        min-height: 100vh;
+    }
+    @include md{
+        height:100vh;
+    }
+    width: 100%;
+    background-color: $secondaire-noir;
+
+    .presentation-content{
+        height: 100%;
+        position: relative;
+        z-index: 1;
+
+        @include xs-md {
+            padding: 30px 0 30px 0;
+            min-height: 100vh;
+        }
+
+        @include md{
+            flex-direction: row;
+            height: 75vh;
+        }
+
+        @include xl(){
+            height: 50vh;
+        }
+
+        background-color: $tertiaire-gris-blanc;
+        .presentation-picture{
+            svg,object,img {
+                width: 100%;
+                @include md(){
+                    width: 150%;
+                    position: absolute;
+                    margin: auto;
+                    left:-75%;
+                    top:0;
+                    bottom: 0;
+
+                }
+            }
+        }
+
+        .presentation-text {
+
+            @include xs-md(){
+                justify-content: center !important;
+                align-items: center !important;
+            }
+            h2{
+                padding: 30px 0 30px 0;
+                @include setup-font($lovelo, #000000, 300);
+                @include responsive-font(0,3rem,3rem,2.5rem,2.2rem,2rem);
+                @include lined-title(#000000);
+            }
+
+            p{
+                @include setup-font($sourceSansPro, black, 300);
+                @include responsive-font(1,1.6rem)
+            }
+        }
+    }
 }
 
-/* ==========================================================================
-MASTER 1 TOGGLE - SECTION MASTER PROGRAMMES
-========================================================================== */
-#master-1-programme-section{
-    height: 100vh;
+/* ---------------------------------------------- /*
+ * Formations pages - Section PROGRAMMES
+/* ---------------------------------------------- */
+.psm-formations-programme-section{
     position: relative;
-    z-index: 1;
+    z-index: 2;
+
+    @include lg{
+        height: 100vh;
+    }
 
     .header {
         height: 30vh;
         background-color: $secondaire-noir;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
 
-        h2 {
-            @include setup-font($lovelo,white,normal);
-            @include responsive-font(0,3rem);
-            @include lg{
-                margin-right: 20vw;
+        div{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            h2 {
+                @include setup-font($lovelo,white,normal);
+                @include responsive-font(0,3rem,3rem,2.5rem,2.2rem,2rem);
+                @include lined-title(#ffffff);
+                @include lg{
+                    margin-right: 20vw;
+                }
             }
-        }
 
-        h3 {
-            padding-top: 30px;
-            @include setup-font($lovelo,$primaire-vert,normal);
-            @include responsive-font(0,2.4rem);
+            h3 {
+                padding-top: 30px;
+                @include setup-font($lovelo,$primaire-vert,normal);
+                @include responsive-font(0,2.4rem);
+            }
         }
     }
     //Programmes Content
     .programme-container {
-        height: 70vh;
+        @include lg {
+            height: 70vh;
+        }
         background-color: $tertiaire-gris-blanc;
-        display: flex;
-        justify-content: center;
+        @include lg {
+            display: flex;
+            justify-content: center;
+        }
         .programme-content{
+            width: 100%;
             @include lg{
                 width: $screen-lg;
             }
@@ -522,13 +331,23 @@ MASTER 1 TOGGLE - SECTION MASTER PROGRAMMES
                 width: $screen-xl;
             }
             .losanges-container{
-                display: flex;
-                justify-content: center;
+                @include lg {
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: row;
+                }
                 .losange-origine {
-                    transform: rotate(-45deg);
-                    position: relative;
-                    margin-top: 100px;
+                    @include xs {
+                        display: flex;
+                        flex-direction: column;
+                    }
+                    @include sm{
+                        flex-direction: row;
+                    }
                     @include lg{
+                        position: relative;
+                        margin-top: 100px;
+                        transform: rotate(-45deg);
                         height: 150px;
                         width: 150px;
                     }
@@ -537,69 +356,104 @@ MASTER 1 TOGGLE - SECTION MASTER PROGRAMMES
                         width: 200px;
                     }
 
-                    .losange {
+                    div.losange {
                         overflow: hidden;
                         box-shadow: 0 8px 5px 0 rgba(0, 0, 0, 0.12), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
-                        height: 100%;
-                        width: 100%;
-                        position: absolute;
                         transition-duration: 0.5s;
                         color: white;
                         background-color: $secondaire-bleu;
-                        @include lg{
+
+
+                        @include xs{
+                            position: relative;
+                        }
+
+                        @include sm-lg{
+                            display: flex;
+                            flex-direction: column;
+                            &:not(.no-hover){
+                                flex:1;
+                            }
+                        }
+
+                        @include xs-sm{
+                            &:last-of-type{
+                                flex:2;
+                            }
+                        }
+
+                        @include lg {
+                            height: 100%;
+                            width: 100%;
                             line-height: 150px;
+                            position: absolute;
+
+                            &:nth-child(1) {
+                                top: -55%;
+                                left: 55%;
+                            }
+                            &:nth-child(2) {
+                                background-color: $secondaire-noir;
+                                top: 55%;
+                                left: 55%;
+                            }
+                            &:nth-child(3) {
+                                top: 55%;
+                                left: -55%;
+                            }
+                            &:nth-child(4) {
+                                top: -55%;
+                                left: -55%;
+                            }
+                            &:hover {
+                                &:not(.no-hover) {
+                                    z-index: 5;
+                                    cursor: pointer;
+                                    background-color: $primaire-vert;
+
+                                }
+
+                            }
+
+                            i {
+                                opacity: 1;
+                                @include transition(all 0.5s ease);
+                            }
                         }
                         @include xl{
                             line-height: 200px;
                         }
-                    }
 
-                    div.losange {
-                        &:nth-child(1) {
-                            top: -55%;
-                            left: 55%;
-                        }
-                        &:nth-child(2) {
-                            background-color: $secondaire-noir;
-                            top: 55%;
-                            left: 55%;
-                        }
-                        &:nth-child(3) {
-                            top: 55%;
-                            left: -55%;
-                        }
-                        &:nth-child(4) {
-                            top: -55%;
-                            left: -55%;
-                        }
-                        &:hover {
-                            &:not(.no-hover){
-                                z-index: 5;
-                                cursor: pointer;
-                                background-color: $primaire-vert;
-
-                            }
-
-                        }
                         &.active {
-                            z-index: 5;
                             background-color: $primaire-vert;
                         }
-
-                        i{
-                            opacity: 1;
-                            @include transition(all 0.5s ease);
-                        }
                     }
+
 
                     .losange h4 {
                         @include setup-font($lovelo, white, normal);
                         @include responsive-font(0,2rem, 1.3rem, 1.6rem,1.6rem,1.6rem);
-                        text-indent: -1000px;
+
+
+                        @include xs-sm{
+                            padding-left: 20px;
+                        }
+
+                        @include xs {
+                            text-align: center;
+                            display: inline;
+                        }
+
                         @include lg{
+                            display: inline-block;
+                            text-indent: -1000px;
                             height: 150px;
                             width: 150px;
                             line-height: 150px;
+
+                            text-align: center;
+                            transform: rotate(45deg);
+                            transition: 0.5s ease;
                         }
 
                         @include xl{
@@ -607,32 +461,41 @@ MASTER 1 TOGGLE - SECTION MASTER PROGRAMMES
                             width: 200px;
                             line-height: 200px;
                         }
-
-
-                        text-align: center;
-                        transform: rotate(45deg);
-                        transition: 0.5s ease;
                     }
 
                     .losange:hover{
-                        h4{  text-indent: 0;  }
+                        @include lg{
+                            h4{  text-indent: 0;  }
 
-                        i{ opacity: 0; }
+                            i{ opacity: 0; }
+                        }
                     }
 
                     i{
-                        height: 90px;
-                        width: 100px;
-                        position: absolute;
-                        top: 0;
-                        bottom: 0;
-                        margin: auto;
-                        left: 0;
-                        right: 0;
-
-                        font-size: 8rem;
+                        font-size: 3rem;
                         text-align: center;
-                        transform: rotate(45deg);
+
+                        padding:15px 0 15px 0;
+
+                        @include xs-sm{
+                            padding-left: 20px;
+                        }
+
+                        @include lg{
+                            position: absolute;
+                            top: 0;
+                            bottom: 0;
+                            margin: auto;
+                            left: 0;
+                            right: 0;
+
+                            height: 90px;
+                            width: 100px;
+
+                            padding: 0;
+                            font-size: 8rem;
+                            transform: rotate(45deg);
+                        }
                     }
                 }
             }
@@ -713,37 +576,329 @@ MASTER 1 TOGGLE - SECTION MASTER PROGRAMMES
     }
 }
 
-/* ==========================================================================
-MASTER 2 TOGGLE - SECTION MASTER PRESENTATION
-========================================================================== */
-
-#master-2-presentation-section{
-    height: 100vh;
+/* ---------------------------------------------- /*
+ * Formations pages - Section PROJECTS
+/* ---------------------------------------------- */
+.psm-formations-project-section {
     width: 100%;
-    overflow: hidden;
-    background-color: #22ffee;
-    z-index: 1;
+    background-color: $secondaire-noir;
     position: relative;
+    z-index: 1;
+    overflow: hidden;
+
+    .row {
+        &.header{
+            min-height: 30vh;
+            background-color: $tertiaire-gris-blanc;
+
+            @include xs-md {
+                display: none;
+            }
+        }
+    }
+
+    .row:nth-of-type(2) {
+        @include xs-md {
+            min-height: 100vh;
+        }
+        @include md{
+            min-height: 70vh;
+        }
+    }
+
+    .projects-content{
+        height: 100%;
+        position: relative;
+        z-index: 1;
+
+        .row {
+            @include xs-md {
+                display: flex;
+                flex-direction: column-reverse;
+            }
+        }
+
+        @include xs-md {
+            padding: 30px 0 30px 0;
+            min-height: 100vh;
+        }
+
+        @include md{
+            margin-top:-40vh;
+            min-height: 75vh;
+            max-height: 90vh;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        @include xl(){
+            min-height: 50vh;
+            height: 50vh;
+        }
+
+        background-color: $secondaire-bleu;
+        .projects-picture{
+            svg,object,img {
+                width: 100%;
+                @include md(){
+                    width: 150%;
+                    position: absolute;
+                    margin: auto;
+                    right:-75%;
+                    top:0;
+                    bottom: 0;
+
+                }
+            }
+        }
+
+        .projects-text {
+            @include xs(){
+                justify-content: center !important;
+                align-items: center !important;
+            }
+
+            @include md(){
+                align-items: flex-start !important;
+            }
+            h2{
+                padding: 30px 0 30px 0;
+                @include setup-font($lovelo, #ffffff, 300);
+                @include responsive-font(0,3rem,3rem,2.5rem,2.2rem,1.5rem);
+                @include lined-title(#ffffff);
+            }
+
+            p{
+                @include setup-font($sourceSansPro, #ffffff, 300);
+                @include responsive-font(1,1.6rem);
+                @include md(){
+                    text-align: left;
+                }
+            }
+            .btns-box{
+
+                @include xs-sm() {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                }
+
+                a.btn:first-of-type {
+                    @include sm() {
+                        margin-right: 30px !important;
+                    }
+                }
+            }
+        }
+    }
+    @include xs-md() {
+        div.col-md-2 {
+            display: none;
+        }
+    }
 }
 
+/* ---------------------------------------------- /*
+ * Formations pages - Section TESTOMONIALS
+/* ---------------------------------------------- */
+
+.psm-formations-testimony-section{
+    position: relative;
+    z-index: 1;
+    .header {
+        min-height: 30vh;
+        background-color: $secondaire-noir;
+
+        div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            @include lg{
+                padding-left: 50px;
+                justify-content: flex-start;
+            }
+            h2 {
+                @include setup-font($lovelo,white,normal);
+                @include responsive-font(0,3rem,3rem,2.5rem,2.2rem,1.8rem);
+                @include lined-title(#ffffff);
+            }
+
+            h3 {
+                padding-top: 30px;
+                @include setup-font($lovelo,$primaire-vert,normal);
+                @include responsive-font(0,2.4rem);
+            }
+        }
+    }
+
+    .row:nth-of-type(2){
+        justify-content: center;
+        background-color: $secondaire-bleu;
+        .hexagone-container{
+            width: 100%;
+            @include xs-lg{
+                display: flex;
+                justify-content: space-around;
+                flex-wrap: wrap;
+                padding-bottom: 100px;
+            }
+            @include lg {
+                width: 930px;
+                padding-top: 150px;
+                height: 100vh;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .hexagone-item{
+                width: 300px;
+                height: 300px;
+                @include xs-lg{
+                    margin: 60px 5px 0 5px;
+                }
+                @include lg{
+                    position: relative;
+                    width: 300px;
+                    margin: -30px 5px 0 5px;
+                    height: 300px;
+                    float:left;
+
+                    &:nth-child(1),
+                    &:nth-child(2) { margin-top: 0; }
+
+                    &:nth-child(7n - 1),
+                    &:nth-child(1) {
+                        margin-left: 160px;
+                    }
+                }
+
+                .hexagone {
+                    position: absolute;
+                    width: 300px;
+                    height: 173.21px;
+                    margin: 86.60px 0;
+                    background-color: $secondaire-noir;
 
 
 
+                    .hexagone-texts{
+                        padding: 10px;
+                        position: relative;
+                        z-index: 3;
+                        text-align: center;
 
+                        blockquote{
+                            @include setup-font($sourceSansPro, white, 300);
+                            @include responsive-font(0,1.4rem);
+                            font-style: italic;
+                        }
 
+                        h3.exergue-number {
+                            @include setup-font($lovelo, white, 500);
+                            @include responsive-font(0,4rem);
+                            span{
+                                @include setup-font($lovelo, white, 500);
+                                @include setup-font($lovelo, white, 500);
+                                @include responsive-font(0,2rem);
+                            }
+                        }
+                        h4{
+                            @include setup-font($sourceSansPro, white, 500);
+                            @include responsive-font(0,2rem);
+                        }
 
+                        p{
+                            @include setup-font($sourceSansPro, white, 300);
+                            @include responsive-font(0,1.4rem);
+                        }
+                    }
 
+                    &.img{
 
+                        &--1 {
+                            background-size: auto 346.4102px;
+                            background-position: center;
+                            background-image: url(http://via.placeholder.com/400x400);
+                        }
 
+                        &--2 {
+                            background-size: auto 346.4102px;
+                            background-position: center;
+                            background-image: url(http://via.placeholder.com/400x400);
+                        }
+                    }
 
+                    .hexTop,
+                    .hexBottom {
+                        position: absolute;
+                        z-index: 1;
+                        width: 212.13px;
+                        height: 212.13px;
+                        overflow: hidden;
+                        -webkit-transform: scaleY(0.5774) rotate(-45deg);
+                        -ms-transform: scaleY(0.5774) rotate(-45deg);
+                        transform: scaleY(0.5774) rotate(-45deg);
+                        background: inherit;
+                        left: 43.93px;
+                    }
 
+                    /*counter transform the bg image on the caps*/
+                    .hexTop:after,
+                    .hexBottom:after {
+                        content: "";
+                        position: absolute;
+                        width: 300.0000px;
+                        height: 173.20508075688775px;
+                        -webkit-transform: rotate(45deg) scaleY(1.7321) translateY(-86.6025px);
+                        -ms-transform: rotate(45deg) scaleY(1.7321) translateY(-86.6025px);
+                        transform: rotate(45deg) scaleY(1.7321) translateY(-86.6025px);
+                        -webkit-transform-origin: 0 0;
+                        -ms-transform-origin: 0 0;
+                        transform-origin: 0 0;
+                        background: inherit;
+                    }
 
+                    .hexTop {
+                        top: -106.0660px;
+                    }
 
+                    .hexTop:after {
+                        background-position: center top;
+                    }
 
+                    .hexBottom {
+                        bottom: -106.0660px;
+                    }
 
-/* ==========================================================================
-FOOTER
-========================================================================== */
+                    .hexBottom:after {
+                        background-position: center bottom;
+                    }
+
+                    &:after {
+                        @include lg {
+                            content: "";
+                            position: absolute;
+                            top: 0.0000px;
+                            left: 0;
+                            width: 300.0000px;
+                            height: 173.2051px;
+                            z-index: 2;
+                            background: inherit;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* ---------------------------------------------- /*
+ * FOOTER
+/* ---------------------------------------------- */
 
 footer{
     position: relative;
